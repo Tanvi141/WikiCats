@@ -33,7 +33,7 @@ def get_cats(cat_name):
     PARAMS = {
         "action" : "query",
         "list" : "categorymembers",
-        "cmtitle" : "Category:"+cat_name,
+        "cmtitle" : cat_name,
         "cmtype": "subcat",
         "format":"json",
         "cmlimit": 100,
@@ -51,7 +51,7 @@ def get_cats(cat_name):
             R = S.get(url=URL, params=PARAMS)
             data = R.json()
             lol = data["query"]["categorymembers"]
-            #print(lol)
+            
             for cat in lol:
                 if cat["title"] not in uids.keys():
                     uids[cat["title"]] = cat["pageid"]
@@ -74,8 +74,8 @@ def cats_galore(cat_name):
         cats_galore(next_cat["title"])
 
 
-uids[sys.argv[1]]=sys.argv[2]
-cats_galore(sys.argv[1])
+uids["Category:"+sys.argv[1]]=sys.argv[2]
+cats_galore("Category:"+sys.argv[1])
 #get_cats(sys.argv[1])
 
 s_uids = {k: v for k, v in sorted(uids.items(), key=lambda item: item[0])}
