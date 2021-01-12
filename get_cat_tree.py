@@ -71,7 +71,7 @@ def cats_galore(cat_name):
     for next_cat in lee:
         if next_cat["title"] in already_writ:    
             continue
-        cats_galore(next_cat)
+        cats_galore(next_cat["title"])
 
 
 uids[sys.argv[1]]=sys.argv[2]
