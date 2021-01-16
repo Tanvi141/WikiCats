@@ -131,5 +131,6 @@ parallel_cats_galore("Category:"+sys.argv[1])
 
 s_uids = {k: v for k, v in sorted(uids.items(), key=lambda item: item[0])}
 
+print(s_uids)
 with open('%s_cat_keys.txt'%(sys.argv[1]), 'w') as outfile:
     json.dump(s_uids, outfile)
