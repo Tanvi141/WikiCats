@@ -64,7 +64,7 @@ def get_indices(path):
 		index_file = wiki_files[it]
 		article_file = wiki_files[it + len_wiki_files//2]
 		
-		if it <= 0 :
+		if it <= -1 :
 			continue
 	   
 		with bz2.BZ2File(index_file, "rb") as indf:
@@ -82,7 +82,7 @@ def get_indices(path):
 			
 				line = indf.readline()
 		print("len of ids to search from file = ", len(ids_to_search))
-		print(ids_to_search)			
+		#print(ids_to_search)			
 		#x = 0
 		#line = artf.readline()
 		#while(x<=400):
@@ -95,7 +95,6 @@ def get_indices(path):
 		parse_xml_file(article_file, OUTFOLDER, ids_to_search)
 		print("Parsing done\n")
 
-		break
 get_page_ids(sys.argv[1])
 get_indices(sys.argv[2])
 merge_xmls()
