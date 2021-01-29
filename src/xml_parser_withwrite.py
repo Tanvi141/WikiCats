@@ -28,6 +28,7 @@ class WikiHandler(xml.sax.ContentHandler):
 		self.elem = None
 		self.writers = {}
 		self.text = []
+		self.title = ''
 
 	def _get_writer(self, filename):
 		with etree.xmlfile(filename) as xf:
@@ -82,6 +83,9 @@ class WikiHandler(xml.sax.ContentHandler):
 				self.id_capture = True      
 				if self.id not in self.article_ids:
 					self.stack.clear()
+				else:
+					with open(self.write_folder+article_id_name_file, 'a+') as of:
+						of.write(self.id+":"+self.title+"\n")
 
 		if self.stack:
 
@@ -96,14 +100,12 @@ class WikiHandler(xml.sax.ContentHandler):
 			self.page_count+=1
 			self.id_capture = False
 			self.data = ""
+			self.id = ''
+			self.title = ''
 
 		elif tag == "title":
 			self.title = self.data
 			self.data = ''
-			if self.id in self.article_ids :
-				with open(self.write_folder+article_id_name_file, 'a+') as of:
-					of.write(self.id+":"+self.title+"\n")
-
 			  
 
 	# Call when a character is read
