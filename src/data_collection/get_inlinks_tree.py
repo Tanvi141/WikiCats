@@ -12,12 +12,16 @@ import threading
 import psutil
 import requests
 import collections
+import urllib
 
 # GLOBAL VARIABLES
 CHUNK = 1000
 threads = []
 article_id_name = {}
 ut_page_ids = set()
+REDIRECT_IDS = 0
+diff_lang = 0
+no_pages = 0
 
 '''
 Function to create new directories
@@ -75,18 +79,17 @@ class WikiHandler(xml.sax.ContentHandler):
 
             #create a new thread for every CHUNK pages
             if(self.page_count%CHUNK == 0):
-                
-                # print("new thread for ", self.page_count, "...")
-                # t = threading.Thread(target=process_chunk_pages, args=(self.page_titles, self.page_texts, self.page_ids,))
-                # threads.append(t)
-                # t.start()
+                print("new thread for ", self.page_count, "...")
+                t = threading.Thread(target=process_chunk_pages, args=(self.page_titles, self.page_texts, self.page_ids,self.page_count,))
+                threads.append(t)
+                t.start()
 
-                process_chunk_pages(self.page_titles, self.page_texts, self.page_ids,)
+                # process_chunk_pages(self.page_titles, self.page_texts, self.page_ids,)
 
                 #reset page arrays
-                self.page_titles.clear()
-                self.page_texts.clear()
-                self.page_ids.clear()
+                self.page_titles = []
+                self.page_texts = []
+                self.page_ids = []
                 # exit(0)
 
         elif tag == "title":
@@ -103,23 +106,23 @@ class WikiHandler(xml.sax.ContentHandler):
                 self.data = ''
                 self.id_capture = True
 
-        elif tag == 'mediawiki':
+        elif tag == 'article':
             
-            # print("new thread for ", self.page_count, "...")
-            # t = threading.Thread(target=process_chunk_pages, args=(self.page_titles, self.page_texts, self.page_ids,))
-            # threads.append(t)
-            # t.start()
+            print("new thread for ", self.page_count, "...")
+            t = threading.Thread(target=process_chunk_pages, args=(self.page_titles, self.page_texts, self.page_ids,self.page_count,))
+            threads.append(t)
+            t.start()
 
             #collect all threads
-            # for t in threads:
-                # t.join()
+            for t in threads:
+                t.join()
 
-            process_chunk_pages(self.page_titles, self.page_texts, self.page_ids,)
+            # process_chunk_pages(self.page_titles, self.page_texts, self.page_ids,)
 
             #reset page arrays
-            self.page_titles.clear()
-            self.page_texts.clear()
-            self.page_ids.clear()     
+            self.page_titles = []
+            self.page_texts = []
+            self.page_ids = []  
                         
 
     # Call when a character is read
@@ -132,54 +135,85 @@ Function to process CHUNK sized pages at a time
 Each CHUNK will be processed by an individual thread.
 '''
 
-def process_chunk_pages(all_title, text, ids):
+def process_chunk_pages(all_title, text, ids,c):
 
-    print(len(all_title), "title chunk", all_title[0])
+    t0 = time.time()
     for i in range(len(all_title)):
-        try:
-            create_inlinks(all_title[i],text[i],ids[i])
-        except:
-            print(i, len(all_title))
-            sys.exit(0)
-
-
+        with open(str(c) ,'a+') as f:
+            f.write(str(i)+"\n")
+        # try :
+        create_inlinks(all_title[i],text[i],ids[i])
+        # except:
+            # print("Something wrong in thread ",c, "Params :", len(all_title), len(text), len(ids))
+            # exit(0)
+    
+    print("Finished processing for ---", c, "in : ", time.time()-t0)
 
 '''
 Function to get all the inlink article edges 
 from a given text for an article
 '''
-def get_edges(text,count_tokens=False):
+def get_edges(text, title, count_tokens=False):
     
+    global REDIRECT_IDS
+
     to_articles = re.findall(r"\[\[(.*?)\]\]", text)
     inlinks = [art.split('|')[0] for art in to_articles]
+    urlencoded_inlinks = [ urllib.parse.quote_plus(link) for link in inlinks ]
 
+    title_to_page_id = {}
+    title_chunk = 0
+    
     #get the pageIDs for the corresponding page titles
-        # url = (
-        #     'https://en.wikipedia.org/w/api.php'
-        #     '?action=query'
-        #     '&prop=info'
-        #     '&inprop=subjectid'
-        #     '&titles=' + '|'.join(to_articles) +
-        #     '&format=json')
-        # json_response = requests.get(url).json()
+    while(title_chunk < len(inlinks)):
+        
+        limit = 50 if len(inlinks) - title_chunk >=50 else len(inlinks) - title_chunk
+        # print("Using limit : ", title_chunk, limit)
+        url = (
+            'https://en.wikipedia.org/w/api.php'
+            '?action=query'
+            # '&prop=info'
+            # '&inprop=subjectid'
+            '&titles='+'|'.join(urlencoded_inlinks[title_chunk:title_chunk+limit]) +
+            '&redirects'
+            '&format=json')
 
-        # title_to_page_id  = {
-        #     page_info['title']: page_id
-        #     for page_id, page_info in json_response['query']['pages'].items()}
+        try:
+            json_response = requests.get(url).json()
+        except:
+            print("API call failed wiki", title)
+            print(url)
+        
+        #TODO :  If page from a different language how to handle
+        if "interwiki" in json_response["query"]:
+            global diff_lang
+            diff_lang += 1
+        
+        if "pages" in json_response['query']:
+            title_to_page_id.update({
+                page_id :page_info['title']
+                for page_id, page_info in json_response['query']['pages'].items()})
+        else:
+            global no_pages
+            no_pages += 1
 
-        # print(title_to_page_id)
-        # print([title_to_page_id[title] for title in to_articles])
-
+        title_chunk+=limit   
+    
     inlink_ids = [article_id_name[art] for art in inlinks if art in article_id_name]
+    inlink_ids_wo_redirects = [ pid for pid in inlink_ids if pid in title_to_page_id]
 
-    return(inlink_ids)
+    inlink_ids_wo_redirects += [pid for pid, title in title_to_page_id.items() if pid not in inlink_ids_wo_redirects and title in article_id_name]
+    diff = [el for el in inlink_ids_wo_redirects if el not in inlink_ids]
+    REDIRECT_IDS += len(diff)
+
+    return(inlink_ids_wo_redirects)
 
 '''
 Function to extract the infobox from the 
 pages of the wikipedia dump
 '''
 
-def get_infobox(text):
+def get_infobox(text, title):
     
     ind = [m.start() for m in re.finditer(r'{{Infobox|{{infobox|{{ Infobox| {{ infobox', text)]
     ans = []
@@ -196,7 +230,7 @@ def get_infobox(text):
                 end=j+1
                 break
         
-        ans+= get_edges(text[i:end+1])
+        ans+= get_edges(text[i:end+1], title)
     
     return ans
 
@@ -226,8 +260,8 @@ def create_inlinks(title, text, a_id):
     
     categories = get_categories(text)
 
-    text_edges = get_edges(text)
-    info_edges = get_infobox(text)
+    text_edges = get_edges(text, title)
+    info_edges = get_infobox(text, title)
 
     # print(text_edges, "full text edges")
     # print(info_edges, "infoedges")
@@ -260,25 +294,28 @@ def create_id_name_json(file):
             line = f.readline().strip()
 
 
+if ( __name__ == "__main__"):
+    article_dump = sys.argv[1]
+    ADJ_INLINKS_FILE = sys.argv[2]
 
-article_dump = sys.argv[1]
-ADJ_INLINKS_FILE = sys.argv[2]
+    print("creating json ...")
+    article_id_name_file = sys.argv[3]
+    create_id_name_json(article_id_name_file)
 
-print("creating json ...")
-article_id_name_file = sys.argv[3]
-create_id_name_json(article_id_name_file)
+    print("starting parsing ...")
+    start = time.time()
 
-print("starting parsing ...")
-start = time.time()
+    # create an XMLReader
+    parser = xml.sax.make_parser()
+    # turn off namepsaces
+    parser.setFeature(xml.sax.handler.feature_namespaces, 0)
 
-# create an XMLReader
-parser = xml.sax.make_parser()
-# turn off namepsaces
-parser.setFeature(xml.sax.handler.feature_namespaces, 0)
+    # override the default ContextHandler
+    Handler = WikiHandler()
+    parser.setContentHandler( Handler )
+    parser.parse(article_dump)
 
-# override the default ContextHandler
-Handler = WikiHandler()
-parser.setContentHandler( Handler )
-parser.parse(article_dump)
-
-print("Total required Time = ", time.time() - start)
+    print("Total required Time = ", time.time() - start)
+    print("Redirect IDs = ", REDIRECT_IDS)
+    print("Diff lang pages = ", diff_lang)
+    print("No Pages = ", no_pages)
