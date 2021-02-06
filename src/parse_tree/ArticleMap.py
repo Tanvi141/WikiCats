@@ -30,10 +30,14 @@ class ArticleMap():
 
             line = f.readline().strip("\n")
 
-    def get_articles_in_cats(self, catlist):
-        to_ret = []
-        for catname in catlist:
-            to_ret += self.cat_to_article[catname]
+    def get_articles_in_cats(self, catdict):
+        to_ret = {}
+        for catname in catdict.keys():
+            for article_id in self.cat_to_article[catname]:
+                if article_id not in to_ret.keys():
+                    to_ret[article_id] = []
+                to_ret[article_id] += catdict[catname]  
+
         return to_ret
 
 

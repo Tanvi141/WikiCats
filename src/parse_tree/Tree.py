@@ -82,50 +82,9 @@ class Tree():
             ret_dict[catname].append((wt_dist, hop_dist))
         
         #the node itself
-        ret_dict[node] = [(0,0)]
+        # ret_dict[node] = [(0,0)]
         
         return ret_dict
-
-    # Cycle detection code credits:
-    # https://www.geeksforgeeks.org/python-program-for-detect-cycle-in-a-directed-graph/
-    
-    def isCyclicUtil(self, v, visited, recStack): 
-  
-        # Mark current node as visited and  
-        # adds to recursion stack 
-        visited[v] = True
-        recStack[v] = True
-  
-        # Recur for all neighbours 
-        # if any neighbour is visited and in  
-        # recStack then graph is cyclic 
-        for neighbour in self.adjlist[v]: 
-            if visited[neighbour[0]] == False: 
-                if self.isCyclicUtil(neighbour[0], visited, recStack) == True: 
-                    return True
-            elif recStack[neighbour[0]] == True: 
-                return True
-  
-        # The node needs to be poped from  
-        # recursion stack before function ends 
-        recStack[v] = False
-        return False
-  
-    # Returns true if graph is cyclic else false 
-    def isCyclic(self): 
-
-        visited = {}
-        recStack = {}
-
-        for node in self.adjlist.keys():
-            visited[node] = False  
-            recStack[node] = False
-
-        for node in self.adjlist.keys(): 
-            if visited[node] == False: 
-                if self.isCyclicUtil(node, visited, recStack) == True: 
-                    return True
-        return False
 
 cattree = Tree("../../data/al_subcat_tree.txt")
 articletree = Tree("../../data/al_inlinks_tree.txt")

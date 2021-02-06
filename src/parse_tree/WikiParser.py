@@ -1,4 +1,5 @@
 import statistics
+import numpy as np
 from Tree import cattree, articletree
 from ArticleMap import articlemap
 
@@ -10,18 +11,16 @@ class WikiParser():
         self.articlemap = articlemap
     
    
-    def compare_dicts(self, dict1, dict2, to_remove_start, to_remove_end, dirn, ht=0): 
+    def compare_dicts(self, dict1, dict2,  search_tree, dirn,ht=0): 
         #pass to_remove_* as 0 if you want to remove, else pass as none
         to_ret = []
         score_components = []
 
         for node1 in dict1.keys():
             for node2 in dict2.keys():
-
-                for node1_adjac in self.cattree.adjlist[node1]: 
+                
+                for node1_adjac in search_tree.adjlist[node1]: 
                     if node2 == node1_adjac[0]:
-                        if dict1[node1][0][0] == to_remove_start or dict2[node2][0][0] == to_remove_end:
-                            continue
                         for occur_1 in dict1[node1]:
                             for occur_2 in dict2[node2]:
                                 eles = []
@@ -36,59 +35,63 @@ class WikiParser():
                             score_components.append(statistics.mean(eles))
                         except:
                             pass
-        
         try:
-            return [to_ret, statistics.mean(score_components)]
+            return [to_ret, 1/statistics.mean(score_components)]
         except:
-            return [to_ret, 100000]
+            return [to_ret, 1/1000000] #TODO
+    
+    def get_score_components(self, cat1, cat2, subtrees, search_tree): 
+        subscores = []
+        entities = []
+        for from_node in range(3):  #0:p, 1:n, 2:c
+            for to_node in range(3): #["p","n","c"]
+                val = self.compare_dicts(subtrees[from_node], subtrees[3+to_node], search_tree, 12)
+                temp = self.compare_dicts(subtrees[3+from_node], subtrees[to_node], search_tree, 21)
+                val[0] += temp[0]  
+                val[1] += temp[1]  
 
-    def get_cat_score(self, cat1, cat2): 
-        
-        #subtree 1
+                subscores.append(val[1])
+                entities.append(val[0])
+
+        #subscores is
+        #0:p->p
+        #1:p->n
+        #2:p->c
+        #3:n->p
+        #4:n->n
+        #5:n->c
+        #6:c->p
+        #7:c->n
+        #8:c->c
+        return np.array(subscores), entities
+
+    def get_cat_score(self, cat1, cat2, subtrees):
+        components, _ = self.get_score_components(cat1, cat2, subtrees, self.cattree)
+        weights = np.array([1, 1, 10, 5, 5, 10, 5, 5, 20])
+        # print(components)
+        return np.dot(components, weights)
+
+    def get_art_score(self, cat1, cat2, subtrees):
+        article_mapped_subtrees = [self.articlemap.get_articles_in_cats(tree) for tree in subtrees]
+        components, _ = self.get_score_components(cat1, cat2, article_mapped_subtrees, self.articletree)
+        weights = np.array([5, 8, 3, 8, 12, 3, 3, 5, 1])
+        return np.dot(components, weights)
+
+    def compare_two_cats(self, cat1, cat2):
+
+         #subtree 1
         cat1_parents = self.cattree.get_neighbours(cat1, 2, "parents")
         cat1_children = self.cattree.get_neighbours(cat1, 2, "children")
+        cat1_self = {cat1:[(0,0)]}
         #subtree 2
         cat2_parents = self.cattree.get_neighbours(cat2, 2, "parents")
         cat2_children = self.cattree.get_neighbours(cat2, 2, "children")
+        cat2_self = {cat2:[(0,0)]}
+        subtrees = (cat1_parents, cat1_self, cat1_children, cat2_parents, cat2_self, cat2_children)
 
-        # n1, n2 are siblings, start is CA
-        p_pn = self.compare_dicts(cat1_parents, cat2_parents, 0, None, 12)
-        temp = self.compare_dicts(cat2_parents, cat1_parents, 0, None, 21)
-        p_pn[0] += temp[0]
-        p_pn[1] += temp[1]
- 
-        # labelless relations
-        np_c = self.compare_dicts(cat1_parents, cat2_children, None, 0, 12)
-        temp = self.compare_dicts(cat2_parents, cat1_children, None, 0, 21)
-        np_c[0] += temp[0]
-        np_c[1] += temp[1]
 
-        c_c = self.compare_dicts(cat1_children, cat2_children, 0, 0, 12)
-        temp = self.compare_dicts(cat2_children, cat1_children, 0, 0, 21)
-        c_c[0] += temp[0]
-        c_c[1] += temp[1]
-
-        # parent-child
-        nc_pn = self.compare_dicts(cat1_children, cat2_parents, None, None, 12)
-        temp = self.compare_dicts(cat2_children, cat1_parents, None, None, 21)
-        nc_pn[0] += temp[0]
-        nc_pn[1] += temp[1]
-
-        print(p_pn,"\n\n")
-        print(np_c,"\n\n")
-        print(c_c,"\n\n")
-        print(nc_pn,"\n\n")
-
-        cat_score = p_pn[1] + np_c[1] + c_c[1] + nc_pn[1]
-        
-        return cat_score
-
-    def get_art_score(self, cat1, cat2):
-        return 0
-
-    def compare_two_cats(self, cat1, cat2):
-        cat_score = self.get_cat_score(cat1, cat2)
-        art_score = self.get_art_score(cat1, cat2)
+        cat_score = self.get_cat_score(cat1, cat2, subtrees)
+        art_score = self.get_art_score(cat1, cat2, subtrees)
 
         sk_score = cat_score + art_score
         print(sk_score)
