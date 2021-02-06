@@ -14,8 +14,7 @@ class Tree():
 
             if node not in self.adjlist:    
                 self.adjlist[node] = [] 
-            # if node not in self.rev_adjlist:    
-            #     self.rev_adjlist[node] = []
+     
 
             for item in nodelist:
                 
@@ -39,9 +38,9 @@ class Tree():
 
             line = f.readline().strip("\n")
 
-        # if len(self.adjlist) != len(self.rev_adjlist):
-        #     raise Exception("Incorrectly parsed", len(self.adjlist), len(self.rev_adjlist))
-
+        if len(self.adjlist) == len(self.rev_adjlist)+1:
+            # raise Exception("Incorrectly parsed", len(self.adjlist), len(self.rev_adjlist))
+            self.rev_adjlist[3970272] = []
         self.num_nodes = len(self.adjlist)
 
     def get_neighbours_recurse(self, node, hops, dirn, track = 1, w = 0): #do we also want to trace the path?

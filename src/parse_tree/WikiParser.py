@@ -1,4 +1,5 @@
 import statistics
+import json
 import numpy as np
 from Tree import cattree, articletree
 from ArticleMap import articlemap
@@ -18,23 +19,26 @@ class WikiParser():
 
         for node1 in dict1.keys():
             for node2 in dict2.keys():
-                
-                for node1_adjac in search_tree.adjlist[node1]: 
-                    if node2 == node1_adjac[0]:
-                        for occur_1 in dict1[node1]:
-                            for occur_2 in dict2[node2]:
-                                eles = []
-                                if dirn == 12:
-                                    to_ret.append((dirn, node1, node2, occur_1[ht], occur_2[ht])) #dirn of edge, node in s1, node in s2
-                                else:
-                                    to_ret.append((dirn, node2, node1, occur_2[ht], occur_1[ht])) 
-                                eles.append(\
-                                    abs(occur_1[ht]) + abs(occur_2[ht]) \
-                                )
-                        try:
-                            score_components.append(statistics.mean(eles))
-                        except:
-                            pass
+                try: #TODO: some articles missing in files
+                    for node1_adjac in search_tree.adjlist[node1]: 
+                        if node2 == node1_adjac[0]:
+                            for occur_1 in dict1[node1]:
+                                for occur_2 in dict2[node2]:
+                                    eles = []
+                                    if dirn == 12:
+                                        to_ret.append((dirn, node1, node2, occur_1[ht], occur_2[ht])) #dirn of edge, node in s1, node in s2
+                                    else:
+                                        to_ret.append((dirn, node2, node1, occur_2[ht], occur_1[ht])) 
+                                    eles.append(\
+                                        abs(occur_1[ht]) + abs(occur_2[ht]) \
+                                    )
+                            try:
+                                score_components.append(statistics.mean(eles))
+                            except:
+                                pass
+                except:
+                    # print("error:", node1)
+                    pass
         try:
             return [to_ret, 1/statistics.mean(score_components)]
         except:
@@ -92,10 +96,27 @@ class WikiParser():
 
         cat_score = self.get_cat_score(cat1, cat2, subtrees)
         art_score = self.get_art_score(cat1, cat2, subtrees)
+        # art_score = 0
 
-        sk_score = cat_score + art_score
-        print(sk_score)
+        sk_score = 0*cat_score + art_score
+        print(sk_score) #TODO: depth of the article
         return sk_score
 
+    def get_best_match(self, catname, search_space):
+        f = open("../../Union_Territories/Union Territories of India_cat_keys.txt","rb")
+        label_map = json.load(f)
+        f.close()
+        inv_map = {v: k for k, v in label_map.items()}
+        sk_scores = []
+        for cat2 in search_space:
+            score = self.compare_two_cats(catname, cat2)
+            try:
+                sk_scores.append((score, inv_map[cat2]))
+            except:
+                sk_scores.append((score, "Original"))
+        sk_scores = sorted(sk_scores, reverse=True)
+        print(sk_scores)
+
 wikiparser = WikiParser(cattree, articletree, articlemap)
-wikiparser.compare_two_cats(50624508, 38398308)
+# wikiparser.compare_two_cats(6969241, 9746199)
+wikiparser.get_best_match(52499719, wikiparser.cattree.adjlist.keys())
