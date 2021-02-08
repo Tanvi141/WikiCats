@@ -50,19 +50,19 @@ class Tree():
             return []
         else:
             to_return = []
-            further_children = []
+            # further_children = []
             if dirn == "children":
                 for node_info in self.adjlist[node]:
                     node_next, wt = node_info
                     to_return.append((node_next, w + wt, track))
-                    further_children += self.get_neighbours_recurse(node_next, hops-1, dirn, track+1, w+wt) 
+                    to_return += self.get_neighbours_recurse(node_next, hops-1, dirn, track+1, w+wt) 
 
 
             elif dirn == "parents":
                 for node_info in self.rev_adjlist[node]:
                     node_next, wt = node_info
                     to_return.append((node_next, w - wt, -1*track))
-                    further_children += self.get_neighbours_recurse(node_next, hops-1, dirn, track+1, w-wt) 
+                    to_return += self.get_neighbours_recurse(node_next, hops-1, dirn, track+1, w-wt) 
 
             else:
                 raise Exception("Invalid dirn")

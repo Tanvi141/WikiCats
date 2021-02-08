@@ -30,8 +30,9 @@ class WikiParser():
                                     else:
                                         to_ret.append((dirn, node2, node1, occur_2[ht], occur_1[ht])) 
                                     eles.append(\
-                                        abs(occur_1[ht]) + abs(occur_2[ht]) \
-                                    )
+                                        node1_adjac[1]*(abs(occur_1[ht]) + abs(occur_2[ht]) + 1) 
+                                    )#node1_adajac[1] = weight of the edge in searchtree joining node1 and node2
+                                    #+1 to take care of 0 case
                             try:
                                 score_components.append(statistics.mean(eles))
                             except:
@@ -77,23 +78,24 @@ class WikiParser():
 
     def get_art_score(self, cat1, cat2, subtrees):
         article_mapped_subtrees = [self.articlemap.get_articles_in_cats(tree) for tree in subtrees]
+        # print(article_mapped_subtrees)
         components, _ = self.get_score_components(cat1, cat2, article_mapped_subtrees, self.articletree)
+        # print(components)
         weights = np.array([5, 8, 3, 8, 12, 3, 3, 5, 1])
         return np.dot(components, weights)
 
     def compare_two_cats(self, cat1, cat2):
 
          #subtree 1
-        cat1_parents = self.cattree.get_neighbours(cat1, 2, "parents")
-        cat1_children = self.cattree.get_neighbours(cat1, 2, "children")
+        cat1_parents = self.cattree.get_neighbours(cat1, 0, "parents")
+        cat1_children = self.cattree.get_neighbours(cat1, 0, "children")
         cat1_self = {cat1:[(0,0)]}
         #subtree 2
-        cat2_parents = self.cattree.get_neighbours(cat2, 2, "parents")
-        cat2_children = self.cattree.get_neighbours(cat2, 2, "children")
+        cat2_parents = self.cattree.get_neighbours(cat2, 0, "parents")
+        cat2_children = self.cattree.get_neighbours(cat2, 0, "children")
         cat2_self = {cat2:[(0,0)]}
         subtrees = (cat1_parents, cat1_self, cat1_children, cat2_parents, cat2_self, cat2_children)
-
-
+        # print(subtrees)
         cat_score = self.get_cat_score(cat1, cat2, subtrees)
         art_score = self.get_art_score(cat1, cat2, subtrees)
         # art_score = 0
@@ -118,5 +120,12 @@ class WikiParser():
         print(sk_scores)
 
 wikiparser = WikiParser(cattree, articletree, articlemap)
-# wikiparser.compare_two_cats(6969241, 9746199)
+# print(wikiparser.cattree.get_neighbours(34711516, 10, "parents"))
+# print(wikiparser.cattree.get_neighbours(34711516, 2, "children"))
+# print(wikiparser.cattree.rev_adjlist[53507525])
+# wikiparser.compare_two_cats(12347045, 52499719)
+# wikiparser.compare_two_cats( 15638708, 52499719)
+# print(wikiparser.articlemap.get_articles_in_cats({52499719:[(0,0)]}))
+# print(wikiparser.articlemap.cat_to_article[52499719])
+# wikiparser.compare_two_cats(3820803,52499719)
 wikiparser.get_best_match(52499719, wikiparser.cattree.adjlist.keys())
