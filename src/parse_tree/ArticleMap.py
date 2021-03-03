@@ -36,7 +36,7 @@ class ArticleMap():
             for article_id in self.cat_to_article[catname]:
                 if article_id not in to_ret.keys():
                     to_ret[article_id] = []
-                to_ret[article_id] += catdict[catname]  
+                to_ret[article_id] += catdict[catname]  #adding two lists
 
         return to_ret
 
