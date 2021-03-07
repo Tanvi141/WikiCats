@@ -1,11 +1,15 @@
+import json
+
 class Tree():
 
-    def __init__(self, filename):
+    def __init__(self, adj_list_filename, id_map_filename, extend_rev_adjlist = False):
 
         self.adjlist = {}
         self.rev_adjlist = {}
+        self.id2name = {}
+        self.name2id = {}
 
-        f = open(filename, "r")
+        f = open(adj_list_filename, "r")
         line = f.readline().strip("\n")
         while(line):
             node, nodelist = line.split(":")
@@ -42,6 +46,37 @@ class Tree():
             # raise Exception("Incorrectly parsed", len(self.adjlist), len(self.rev_adjlist))
             self.rev_adjlist[3970272] = []
         self.num_nodes = len(self.adjlist)
+
+        if extend_rev_adjlist:
+            with open('../../data/categories_parent_ids.txt','r'):
+                cat, parents = line.split(':',1)
+                parent_cats = parents.split('\t')
+                
+                if cat not in self.rev_adjlist:
+                    self.rev_adjlist[cat] = []
+
+                for parent in parent_cats:
+                    self.rev_adjlist[cat].append(parent)
+                
+                self.rev_adjlist[cat] = list(set(self.rev_adjlist[cat]))
+
+
+        #populating the ID2map and map2id dictionaries for categories and articles
+        try:
+            with open(id_map_filename) as json_file: 
+                self.name2id.update(json.load(json_file))
+                self.id2name.update({value : key for (key, value) in self.name2id.items()})
+
+        except:
+            with open(id_map_filename, 'r') as f:
+                line = f.readline().strip('\n')
+
+                while(line):
+                    id, title = line.split(':')
+                    self.name2id[title] = id
+                    self.id2name[id] = title
+                    line = f.readline().strip('\n')
+
 
     def get_neighbours_recurse(self, node, hops, dirn, track = 1, w = 0): #do we also want to trace the path?
         if hops < 0:
@@ -85,5 +120,5 @@ class Tree():
         
         return ret_dict
 
-cattree = Tree("../../data/al_subcat_tree.txt")
-articletree = Tree("../../data/al_inlinks_tree.txt")
+cattree = Tree("../../data/al_subcat_tree.txt", '../../Union_Territories/Union Territories of India_cat_keys.txt')
+articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt")

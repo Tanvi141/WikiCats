@@ -52,15 +52,25 @@ class LabelMatcher():
 
         return parent_counts
 
-    def get_matching_articles(self, article):
+    def get_matching_cats(self, catname):
+        S1 = self.identify_articles_in_subtree(catname)
+        S2 = self.get_inlink_neighbours(S1)
+        potential_p2 = self.identify_labels(S2, 2)
+        return potential_p2
+
+    def get_matching_articles(self, article, up_height):
+        
         cats = self.articlemap.get_cats_of_articles([article])
         
-        for p1 in cats:
-            S1 = self.identify_articles_in_subtree(p1)
-            S2 = self.get_inlink_neighbours(S1)
-            potential_p2 = self.identify_labels(S2, 2)
-            print(potential_p2)
-            break
-
+        for cat in cats:
+            temp_dict = self.cattree.get_neighbours(cat, up_height, "parents")
+        
+            for p1 in temp_dict.keys():
+                pot_p2 = self.get_matching_cats(p1)
+                print(p1)
+                print(pot_p2)
+                print()
+                # break
+        
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
-labelmatcher.get_matching_articles(28712618)
+labelmatcher.get_matching_articles(28712618, 5)
