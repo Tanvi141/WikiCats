@@ -1,5 +1,6 @@
 import json
-blacklist  = [60159159, 59055138, 62028269, 63588168, 59055138, 59055145, 63587964, 63588072, 63588010, 63588075, 60159153, 60159163]
+blacklist  = [60159159, 59055138, 62028269, 63588168, 59055138, 59055145, 63587964, 63588072, 63588010, 
+63588075, 60159153, 60159163, 63612163, 63612171, 63587925, 63612189, 63612181, 63612210]
 class Tree():
 
     def __init__(self, adj_list_filename, id_map_filename, extend_rev_adjlist = False):
@@ -85,7 +86,8 @@ class Tree():
                         line1 = f1.readline().strip("\n")
                         line2 = f2.readline().strip("\n")
                         continue
-
+                    
+                    #extendin rev
                     parent_cats = [int(p) for p in parent_cats]
                     if cat not in self.rev_adjlist:
                         self.rev_adjlist[cat] = []
@@ -93,11 +95,15 @@ class Tree():
                     for parent in parent_cats:
                         if parent not in blacklist:
                             self.rev_adjlist[cat].append((parent,1))
-                        
-                    line1 = f1.readline().strip("\n")
-                    line2 = f2.readline().strip("\n")
-
                     self.rev_adjlist[cat] = list(set(self.rev_adjlist[cat]))
+
+
+                    #extending adjlist
+                    for parent in parent_cats:
+                        if parent not in self.adjlist:
+                            self.adjlist[parent] = []
+                        self.adjlist[parent] += [(cat,1)]
+                        self.adjlist[parent] = list(set(self.adjlist[parent]))
 
                     self.name2id[catname] = cat
                     self.id2name[cat] = catname
@@ -106,7 +112,18 @@ class Tree():
                         if pid not in blacklist:
                             self.name2id[pname] = pid
                             self.id2name[pid] = pname
+                    
+                    line1 = f1.readline().strip("\n")
+                    line2 = f2.readline().strip("\n")
 
+        strs = ["Template Category TOC via CatAutoTOC", "Navseasoncats using skip-gaps", "CatAutoTOC generates",
+         "Template Large category TOC"]
+
+        for tatti in strs:
+            for id in self.id2name.keys():
+                if self.id2name[id][:len(tatti)] == tatti:
+                    print(id, end = ", ")
+                    
     def get_neighbours_recurse(self, node, hops, dirn, track = 1, w = 0): #do we also want to trace the path?
         if hops < 0:
             raise Warning("Negative hops")

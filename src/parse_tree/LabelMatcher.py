@@ -54,6 +54,7 @@ class LabelMatcher():
 
     def get_matching_cats(self, catname):
         S1 = self.identify_articles_in_subtree(catname)
+        # print(S1)
         S2 = self.get_inlink_neighbours(S1)
         potential_p2 = self.identify_labels(S2, 2)
         return potential_p2
@@ -67,12 +68,12 @@ class LabelMatcher():
             temp_dict = self.cattree.get_neighbours(cat, up_height, "parents")
         
             for p1 in temp_dict.keys():
-                pot_p2 = self.get_matching_cats(p1)
                 print("\n\nWith label as", self.cattree.id2name[p1])
+                pot_p2 = self.get_matching_cats(p1)
                 print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
                 # break
         
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
 labelmatcher.get_matching_articles(28712618, 5)
-# print(labelmatcher.cattree.adjlist[60159159])
-# print(labelmatcher.cattree.rev_adjlist[60159159])
+# labelmatcher.get_matching_cats(2681730)
+# print(labelmatcher.cattree.adjlist[2681730])
