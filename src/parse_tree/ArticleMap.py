@@ -30,21 +30,32 @@ class ArticleMap():
 
             line = f.readline().strip("\n")
 
-    def get_articles_in_cats(self, catdict):
+    def get_articles_in_cats(self, catdict, ignorefaults = False):
         to_ret = {}
         for catname in catdict.keys():
-            for article_id in self.cat_to_article[catname]:
-                if article_id not in to_ret.keys():
-                    to_ret[article_id] = []
-                to_ret[article_id] += catdict[catname]  #adding two lists
-
+            try:
+                for article_id in self.cat_to_article[catname]:
+                    if article_id not in to_ret.keys():
+                        to_ret[article_id] = []
+                    to_ret[article_id] += catdict[catname]  #adding two lists
+            except:
+                if ignorefaults:
+                    pass
+                else:
+                    raise Exception("Category is not in the Union Territories catrgory")
         return to_ret
 
 
-    def get_cats_of_articles(self, articlelist):
+    def get_cats_of_articles(self, articlelist, ignorefaults = False):
         to_ret = []
         for article in articlelist:
-            to_ret += self.article_to_cat[article]
+            try:
+                to_ret += self.article_to_cat[article]
+            except:
+                if ignorefaults:
+                    pass
+                else:
+                    raise Exception("Article is not in the Union Territories catrgory")
         return to_ret
 
 articlemap = ArticleMap("../../data/consolidated_subpages.txt")

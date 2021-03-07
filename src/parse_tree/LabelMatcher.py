@@ -16,7 +16,7 @@ class LabelMatcher():
         subcats = self.cattree.get_neighbours(catname, 1000, "children") #getting the entire subtree
         subcats[catname] = [(0,0)]
 
-        subarts = self.articlemap.get_articles_in_cats(subcats)
+        subarts = self.articlemap.get_articles_in_cats(subcats, True)
 
         return subarts
 
@@ -31,7 +31,7 @@ class LabelMatcher():
     def identify_all_parents_single_article(self, artname, hop_height):
         
         all_cats = set()
-        one_hop = set(self.articlemap.get_cats_of_articles([artname]))
+        one_hop = set(self.articlemap.get_cats_of_articles([artname], True))
         #do i want n-hops of all of these, or just the top ones?
         all_cats = all_cats.union(one_hop)
 
@@ -63,14 +63,16 @@ class LabelMatcher():
         cats = self.articlemap.get_cats_of_articles([article])
         
         for cat in cats:
+            print("PARENTS OF CAT", cat)
             temp_dict = self.cattree.get_neighbours(cat, up_height, "parents")
         
             for p1 in temp_dict.keys():
                 pot_p2 = self.get_matching_cats(p1)
-                print(p1)
-                print(pot_p2)
-                print()
+                print("\n\nWith label as", self.cattree.id2name[p1])
+                print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
                 # break
         
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
 labelmatcher.get_matching_articles(28712618, 5)
+# print(labelmatcher.cattree.adjlist[60159159])
+# print(labelmatcher.cattree.rev_adjlist[60159159])
