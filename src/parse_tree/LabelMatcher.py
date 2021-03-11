@@ -63,15 +63,22 @@ class LabelMatcher():
         
         cats = self.articlemap.get_cats_of_articles([article])
         
+        potential_p1 = set()
+        
         for cat in cats:
             print("PARENTS OF CAT", cat)
             temp_dict = self.cattree.get_neighbours(cat, up_height, "parents")
         
             for p1 in temp_dict.keys():
-                print("\n\nWith label as", self.cattree.id2name[p1])
-                pot_p2 = self.get_matching_cats(p1)
-                print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
-                # break
+                potential_p1.add(p1)
+            
+        # make sure that there are no ancestors if a->b->c, a and c in potential_p1, keep only c
+
+        for p1 in potential_p1:        
+            print("\n\nWith label as", self.cattree.id2name[p1])
+            pot_p2 = self.get_matching_cats(p1)
+            print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
+            # break
         
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
 labelmatcher.get_matching_articles(28712618, 5)
