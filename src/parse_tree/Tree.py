@@ -1,6 +1,7 @@
 import json
 blacklist  = [60159159, 59055138, 62028269, 63588168, 59055138, 59055145, 63587964, 63588072, 63588010, 
-63588075, 60159153, 60159163, 63612163, 63612171, 63587925, 63612189, 63612181, 63612210]
+7361045, 63588075, 60159153, 60159163, 63612163, 63612171, 63587925, 63612189, 63612181, 63612210, 23823120,
+35505592, 49033005, 35214392, 44084293, 16100560, 1027246, 32021334, 1982505, 738040 ]
 class Tree():
 
     def __init__(self, adj_list_filename, id_map_filename, extend_rev_adjlist = False):
@@ -117,12 +118,13 @@ class Tree():
                     line2 = f2.readline().strip("\n")
 
         strs = ["Template Category TOC via CatAutoTOC", "Navseasoncats using skip-gaps", "CatAutoTOC generates",
-         "Template Large category TOC"]
+         "Template Large category TOC", "Wikipedia"]
 
-        for tatti in strs:
-            for id in self.id2name.keys():
-                if self.id2name[id][:len(tatti)] == tatti:
-                    print(id, end = ", ")
+        # for tatti in strs:
+        #     for id in self.id2name.keys():
+        #         if self.id2name[id][:len(tatti)] == tatti:
+        #             print(id, self.id2name[id], end = "\n")
+        #             # print(id, end = ", ")
                     
     def get_neighbours_recurse(self, node, hops, dirn, track = 1, w = 0): #do we also want to trace the path?
         if hops < 0:

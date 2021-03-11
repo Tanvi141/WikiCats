@@ -81,6 +81,6 @@ class LabelMatcher():
             # break
         
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
-labelmatcher.get_matching_articles(28712618, 5)
+# labelmatcher.get_matching_articles(28712618, 5)
 # labelmatcher.get_matching_cats(2681730)
 # print(labelmatcher.cattree.adjlist[2681730])
