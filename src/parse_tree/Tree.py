@@ -1,7 +1,7 @@
 import json
-blacklist  = [60159159, 59055138, 62028269, 63588168, 59055138, 59055145, 63587964, 63588072, 63588010, 
+badlist  = [60159159, 59055138, 62028269, 63588168, 59055138, 59055145, 63587964, 63588072, 63588010, 
 7361045, 63588075, 60159153, 60159163, 63612163, 63612171, 63587925, 63612189, 63612181, 63612210, 23823120,
-35505592, 49033005, 35214392, 44084293, 16100560, 1027246, 32021334, 1982505, 738040, 15961454 ]
+35505592, 49033005, 35214392, 44084293, 16100560, 1027246, 32021334, 1982505, 738040, 15961454, 40602735, 30176254, 6239522]
 class Tree():
 
     def __init__(self, adj_list_filename, id_map_filename, extend_rev_adjlist = False):
@@ -18,7 +18,7 @@ class Tree():
             node = int(node)
             nodelist = nodelist.split(",")
 
-            if node in blacklist:
+            if node in badlist:
                 continue
 
             if node not in self.adjlist:    
@@ -37,7 +37,7 @@ class Tree():
                     except:
                         continue
                 
-                if next_node in blacklist:
+                if next_node in badlist:
                     continue
 
                 self.adjlist[node].append((next_node,wt))
@@ -54,6 +54,14 @@ class Tree():
             self.rev_adjlist[3970272] = []
         self.num_nodes = len(self.adjlist)
         
+        #getting the height of nodes
+        self.id2height = {}
+        try:
+            self.id2height[3970272] = 0
+            self.set_id_2_ht(3970272, 0)
+        except:
+            pass
+
           #populating the ID2map and map2id dictionaries for categories and articles
         try:
             with open(id_map_filename) as json_file: 
@@ -83,7 +91,7 @@ class Tree():
                     parent_cats = parents.split('\t')[:-1]
                     cat = int(cat)
 
-                    if cat in blacklist:
+                    if cat in badlist:
                         line1 = f1.readline().strip("\n")
                         line2 = f2.readline().strip("\n")
                         continue
@@ -94,8 +102,11 @@ class Tree():
                         self.rev_adjlist[cat] = []
 
                     for parent in parent_cats:
-                        if parent not in blacklist:
+                        if parent not in badlist:
                             self.rev_adjlist[cat].append((parent,1))
+                            # print("HERE")
+                            if cat not in [8082288]:
+                                self.id2height[parent] = self.id2height[cat] - 1
                     self.rev_adjlist[cat] = list(set(self.rev_adjlist[cat]))
 
 
@@ -110,7 +121,7 @@ class Tree():
                     self.id2name[cat] = catname
                     parentsnames = parentsnames.split('\t')[:-1]
                     for pid, pname in zip(parent_cats, parentsnames):
-                        if pid not in blacklist:
+                        if pid not in badlist:
                             self.name2id[pname] = pid
                             self.id2name[pid] = pname
                     
@@ -125,7 +136,19 @@ class Tree():
         #         if self.id2name[id][:len(tatti)] == tatti:
         #             print(id, self.id2name[id], end = "\n")
         #             # print(id, end = ", ")
-                    
+        
+        # try:
+        #     print(self.id2height[8082288])
+        # except:
+        #     pass
+
+    def set_id_2_ht(self, node, h):
+        for node_info in self.adjlist[node]:
+            node_next, wt = node_info
+            self.id2height[node_next] = h + 1
+            self.set_id_2_ht(node_next, h + 1) 
+
+
     def get_neighbours_recurse(self, node, hops, dirn, track = 1, w = 0): #do we also want to trace the path?
         if hops < 0:
             raise Warning("Negative hops")
