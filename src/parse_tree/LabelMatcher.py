@@ -94,6 +94,38 @@ class LabelMatcher():
         potential_p2 = self.identify_labels(S2, 3)
         return potential_p2
 
+    def get_tfidf_scores(self, p1p2):
+
+        '''
+        The term frequency (occurence of a p2 in a p1) is always =1
+        since the identify labels function returns a dictionary of potential P2s
+
+        IDF is computed by taking into account the number of p1s 
+        that contain a particular p2
+        '''
+        
+        p2_count = {}
+        total_docs = len(p1p2)
+
+        for p1 in p1p2.keys():
+            for p2 in p1p2[p1].keys():
+
+                if p2 not in p2_count:
+                    p2_count[p2] = 1
+                else:
+                    p2_count[p2] += 1
+
+        for p1 in p1p2.keys():
+
+            for p2 in p1p2[p1].keys():
+                p1p2[p1][p2] *= np.log(total_docs / (1+p2_count[p2]))
+
+            p1p2[p1] = dict(sorted(p1p2[p1].items(), key=lambda item: item[1], reverse=True))
+
+        return p1p2
+
+
+
     def get_matching_articles(self, article, up_height):
         
         cats = self.articlemap.get_cats_of_articles([article])
@@ -108,12 +140,27 @@ class LabelMatcher():
                 potential_p1.add(p1)
             
         # make sure that there are no ancestors if a->b->c, a and c in potential_p1, keep only c
-
+        p1_map_p2 = {}
         for p1 in potential_p1:        
-            print("\n\nWith label as", self.cattree.id2name[p1])
+            #print("\n\nWith label as", self.cattree.id2name[p1])
             pot_p2 = self.get_matching_cats(p1)
-            print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
+            p1_map_p2[p1] = pot_p2
+            #print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
             # break
+
+        p1_map_p2_tfidf = self.get_tfidf_scores(p1_map_p2)
+        
+        for p1 in p1_map_p2_tfidf.keys():
+            
+            pot_p2_dict = p1_map_p2_tfidf[p1]
+            print("\n\nWith label as", self.cattree.id2name[p1])
+            print("Len", len(pot_p2_dict))
+            print([(p2, self.cattree.id2name[p2], pot_p2_dict[p2]) for p2 in pot_p2_dict ][:20])
+            print()
+            print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
+            print()
+
+
         
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
 labelmatcher.get_matching_articles(26761192, 2)
