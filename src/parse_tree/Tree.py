@@ -98,6 +98,10 @@ class Tree():
                     
                     #extendin rev
                     parent_cats = [int(p) for p in parent_cats]
+                    for parent in parent_cats:
+                        if parent not in self.rev_adjlist:
+                            self.rev_adjlist[parent] = []
+
                     if cat not in self.rev_adjlist:
                         self.rev_adjlist[cat] = []
 
@@ -142,7 +146,7 @@ class Tree():
         # except:
         #     pass
 
-    def set_id_2_ht(self, node, h):
+    def set_id_2_ht(self, node, h): #TODO : optimize this - decide the best way to select the height
         for node_info in self.adjlist[node]:
             node_next, wt = node_info
             self.id2height[node_next] = h + 1
@@ -177,6 +181,7 @@ class Tree():
             except:
                 # passable = [66401928, 66332501,  66323714, 66286062, 66294548, 66340636, 66402743, 66284249, 66296944, 66341416, 66393006]
                 # print("Article too new to be in adjlist", node)
+                # print("exception!!!!!", node)
                 pass
                 
         return to_return
@@ -189,7 +194,7 @@ class Tree():
             catname, wt_dist, hop_dist = item
             if catname not in ret_dict:
                 ret_dict[catname] = []
-            
+
             ret_dict[catname].append((wt_dist, hop_dist))
         
         #the node itself
