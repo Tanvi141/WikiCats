@@ -165,14 +165,14 @@ class Tree():
                 if dirn == "children":
                     for node_info in self.adjlist[node]:
                         node_next, wt = node_info
-                        to_return.append((node_next, w + wt, track))
+                        to_return.append((node_next, w + wt, track, node))
                         to_return += self.get_neighbours_recurse(node_next, hops-1, dirn, track+1, w+wt) 
 
 
                 elif dirn == "parents":
                     for node_info in self.rev_adjlist[node]:
                         node_next, wt = node_info
-                        to_return.append((node_next, w - wt, -1*track))
+                        to_return.append((node_next, w - wt, -1*track, node))
                         to_return += self.get_neighbours_recurse(node_next, hops-1, dirn, track+1, w-wt) 
 
                 else:
@@ -186,21 +186,23 @@ class Tree():
                 
         return to_return
 
-    def get_neighbours(self, node, hops, dirn):
+    def get_neighbours(self, node, hops, dirn, node_itself = False):
         as_list = self.get_neighbours_recurse(node, hops, dirn)
         ret_dict = {}
 
         for item in as_list:
-            catname, wt_dist, hop_dist = item
+            catname, wt_dist, hop_dist, parent_cat = item
             if catname not in ret_dict:
                 ret_dict[catname] = []
 
-            ret_dict[catname].append((wt_dist, hop_dist))
+            ret_dict[catname].append((wt_dist, hop_dist, parent_cat))
         
         #the node itself
-        # ret_dict[node] = [(0,0)]
+        if node_itself:
+            ret_dict[node] = [(0,0,None)]
         
         return ret_dict
 
 cattree = Tree("../../data/al_subcat_tree.txt", '../../Union_Territories/Union Territories of India_cat_keys.txt', True)
 articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt")
+

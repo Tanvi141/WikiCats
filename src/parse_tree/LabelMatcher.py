@@ -96,7 +96,7 @@ class LabelMatcher():
         # print(S1)
         S2 = self.get_inlink_neighbours(S1)
         potential_p2 = self.identify_labels(S2, 3)
-        return potential_p2, check_potential_p1
+        return potential_p2, check_potential_p1, len(S1)
 
     def get_tfidf_scores(self, p12):
 
@@ -130,26 +130,38 @@ class LabelMatcher():
 
         return p1p2
 
+    def get_path(self, catname_ip, p1_depths, arts_so_far=[]):
+        to_ret = []
 
+        for catname in p1_depths:
+            for item in p1_depths[catname]:
+                if item[2] == catname_ip and catname not in arts_so_far and catname not in to_ret:
+                    to_ret += [catname]
+                    tmp = self.get_path(catname, p1_depths, to_ret)
+                    to_ret += tmp
+
+        return to_ret
 
     def get_matching_articles(self, article, up_height):
         
+        print("Querying for article", self.articletree.id2name[article])
         cats = self.articlemap.get_cats_of_articles([article])
         
         potential_p1 = set()
         p1_depths = {}
         # print(cats)
         for cat in cats:
-            # print("PARENTS OF CAT", cat)
-            temp_dict = self.cattree.get_neighbours(cat, up_height, "parents")
-            temp_dict2 = self.cattree.get_neighbours(cat, 100, "parents")
+            # print("\n\nWith label as", self.cattree.id2name[cat])
+            temp_dict = self.cattree.get_neighbours(cat, up_height, "parents", True)
+            temp_dict2 = self.cattree.get_neighbours(cat, 100, "parents", True)
             
             for p1 in temp_dict.keys():
                 potential_p1.add(p1)
                 
             for p1 in temp_dict2.keys(): # a lot of misc garbage entries will also come in but we will not access them
-                if p1 == 37327939:
-                    print(temp_dict2[p1])
+                # if p1 == 37327939:
+                #     print(temp_dict2[p1])
+
                 if p1 not in p1_depths:  
                     p1_depths[p1] = temp_dict2[p1]
                 else:
@@ -160,11 +172,13 @@ class LabelMatcher():
         # make sure that there are no ancestors if a->b->c, a and c in potential_p1, keep only c
         p1_map_p2 = {}
         p1_map_p1 = {} #checkign whether p1 is good or no
+        p1_map_art_subtree_size = {} #checkign whether p1 is good or no
         for p1 in potential_p1:        
             #print("\n\nWith label as", self.cattree.id2name[p1])
-            pot_p2, pot_p1 = self.get_matching_cats(p1, -3)
+            pot_p2, pot_p1, p1_art_subtree_size = self.get_matching_cats(p1, -3)
             p1_map_p2[p1] = pot_p2
             p1_map_p1[p1] = pot_p1
+            p1_map_art_subtree_size[p1] = p1_art_subtree_size
             #print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
             # break
 
@@ -173,6 +187,8 @@ class LabelMatcher():
 
         # p1_map_p1_tfidf = dict(sorted(p1_map_p1_tfidf.items(), key=lambda item: (len(item[1])*-1*p1_depths[item[0]])))
         
+        # print(p1_map_p1)
+
         p1_fitness = {}
         for p1 in potential_p1:
             p1_fitness[p1] = 0
@@ -188,15 +204,29 @@ class LabelMatcher():
 
         p1_fitness = dict(sorted(p1_fitness.items(), key=lambda item: item[1]))
 
-        
-        for p1 in p1_fitness.keys():
+        p1_map_art_subtree_size = dict(sorted(p1_map_art_subtree_size.items(), key=lambda item: item[1]))
+
+        size_thres = 5000
+        bad_cats = [cat for cat in p1_map_art_subtree_size.keys() if p1_map_art_subtree_size[cat] > size_thres] #TODO:adjust this value of 3?
+            
+
+        for p1 in p1_map_art_subtree_size.keys():
+            
+            # if p1_depths[p1][0][0] != -3: #checking the minimum depth. -2 cause signs are negative
+            #     continue
+            
+            path = set(self.get_path(p1, p1_depths))
+            if len([value for value in bad_cats if value in path]) != 0 or p1 in bad_cats:
+                continue
             
             pot_p2_dict = p1_map_p2_tfidf[p1]
             print("\n\nWith label as", self.cattree.id2name[p1], p1)
+            print(path)
             # print("Len pot p2", len(pot_p2_dict))
             # print([(p2, self.cattree.id2name[p2], pot_p2_dict[p2]) for p2 in pot_p2_dict ][:20])
             # print([(p11, self.cattree.id2name[p11], p1_map_p1[p1][p11]) for p11 in p1_map_p1[p1]][:20])
             # print()
+            print("Subtree size", p1_map_art_subtree_size[p1])
             print("Len of tfidf p1", len(p1_map_p1[p1]))
             print("Depth in tree", p1_depths[p1])
             # print("score", p1_depths[p1]*-1*len(p1_map_p1_tfidf[p1]))
@@ -206,20 +236,7 @@ class LabelMatcher():
             # print()
         
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
-labelmatcher.get_matching_articles(47385064, 2)
-# labelmatcher.get_matching_cats(2681730)
-# print(labelmatcher.cattree.adjlist[2681730])
-# for i in labelmatcher.articletree.adjlist[7016804]:
-#     print(labelmatcher.articletree.id2name[i[0]])
-# print("\\n\n")
-# for i in labelmatcher.articletree.rev_adjlist[7016804]:
-#     print(labelmatcher.articletree.id2name[i[0]])
-# print("\\n\n")
-
-# print("india : 37327939")
-# print(labelmatcher.cattree.adjlist[37327939])
-# print(labelmatcher.cattree.rev_adjlist[37327939])
-# print()
-# print("andaman : 35862280")
-# print(labelmatcher.cattree.adjlist[35862280])
-# print(labelmatcher.cattree.rev_adjlist[35862280])
+labelmatcher.get_matching_articles(17687501, 3)
+# labelmatcher.get_matching_articles(28712618, 3)
+# labelmatcher.get_matching_articles(47385064, 3)
+# labelmatcher.get_matching_articles(26761192, 3)
