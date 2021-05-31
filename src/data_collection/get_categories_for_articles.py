@@ -9,67 +9,18 @@ import time
 import platform    # For getting the operating system name
 import subprocess  # For executing a shell command
 
+from utils import Utils
+
 category2id = {}
 id2article = {}
 
 S = requests.Session()
 URL = "https://en.wikipedia.org/w/api.php"
 
-'''
-Function to check if the server is active
-'''
-def ping(host):
-    """
-    Returns True if host (str) responds to a ping request.
-    Remember that a host may not respond to a ping (ICMP) request even if the host name is valid.
-    """
+util = Utils()
+category2id = {}
+id2article = {}
 
-    # Option for the number of packets as a function of
-    param = '-n' if platform.system().lower()=='windows' else '-c'
-
-    # Building the command. Ex: "ping -c 1 google.com"
-    command = ['ping', param, '1', host]
-
-    return subprocess.call(command) == 0
-
-
-'''
-Function that returns the title of given ID
-'''
-def get_title_from_id(id):
-
-    PARAMS = {
-        "action" : "query",
-        "prop" : "info", 
-        "format":"json",
-        "pageids" : id,
-    }
-    
-    if pint(
-    R = S.get(url=URL, params=PARAMS)
-    data = R.json()
-    
-    try:
-        return list(data["query"]["pages"].values())[0]["title"]
-    except:
-        print("Title not found for:", id)
-        return "None"
-
-'''
-Function that returns the ID of a given title
-'''
-def get_id_from_title(title):
-
-    PARAMS = {
-        "action" : "query",
-        "prop" : "info", 
-        "format":"json",
-        "titles" : title,
-    }
-    R = S.get(url=URL, params=PARAMS)
-    data = R.json()
-
-    return (list(data["query"]["pages"].keys())[0])
 
 '''
 Function to return the set of categories associated
@@ -85,8 +36,14 @@ def get_all_categories(article_id):
         "clshow":"!hidden",
         "pageids" : article_id,
     }
-    R = S.get(url=URL, params=PARAMS)
-    data = R.json()
+
+    try:
+        R = S.get(url=URL, params=PARAMS)
+        data = R.json()
+    except:
+        time.sleep(600)
+        R = S.get(url=URL, params=PARAMS)
+        data = R.json()
 
     category_set = set()
     try:
@@ -97,7 +54,7 @@ def get_all_categories(article_id):
     for category in category_info:
         
         title = category["title"]
-        id = get_id_from_title(title)
+        id = util.get_id_from_title(title)
 
         if title not in category2id:
             category2id[title] = id
@@ -120,7 +77,6 @@ with open("../../Union_Territories/consolidated_subpages.txt",'r') as f:
     while(line):
         
         if count % 10 == 0:
-            
             with open("log.txt", "w") as wr:
                 wr.write("C =" + str(count))
             time.sleep(600)
@@ -139,28 +95,28 @@ with open("../../Union_Territories/consolidated_subpages.txt",'r') as f:
         '''
         for a_id in article_ids:
             
-            id2article[a_id] = get_title_from_id(a_id)
+            id2article[a_id] = util.get_title_from_id(a_id)
             article_cat_map[a_id] = get_all_categories(a_id)
-            #break
+            break
         
         line = f.readline().strip()
-        #break
+        break
 
 
 print("ID to article ...")
-#print(id2article)
+# print(id2article)
 with open("../../data/id2article.json", 'w') as f:
     json.dump(id2article, f)
 
 
 print("\n\ncategory 2 id ...")
-#print(category2id)
+# print(category2id)
 with open("../../data/category2id.json", 'w') as f:
     json.dump(category2id, f)
 
 
 print("\n\narticle cat map ...")
-#print(article_cat_map)
+# print(article_cat_map)
 with open("../../data/article_cat_map.json", 'w') as f:
     json.dump(article_cat_map, f)
 
