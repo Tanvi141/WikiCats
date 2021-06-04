@@ -97,26 +97,26 @@ with open("../../Union_Territories/consolidated_subpages.txt",'r') as f:
             
             id2article[a_id] = util.get_title_from_id(a_id)
             article_cat_map[a_id] = get_all_categories(a_id)
-            break
+            #break
         
         line = f.readline().strip()
-        break
+        #break
 
 
 print("ID to article ...")
-# print(id2article)
+#print(id2article)
 with open("../../data/id2article.json", 'w') as f:
     json.dump(id2article, f)
 
 
 print("\n\ncategory 2 id ...")
-# print(category2id)
+#print(category2id)
 with open("../../data/category2id.json", 'w') as f:
     json.dump(category2id, f)
 
 
 print("\n\narticle cat map ...")
-# print(article_cat_map)
+#print(article_cat_map)
 with open("../../data/article_cat_map.json", 'w') as f:
     json.dump(article_cat_map, f)
 
