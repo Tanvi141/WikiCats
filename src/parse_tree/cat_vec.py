@@ -26,7 +26,7 @@ with open("../../data/cat2kg_id.json") as f:
         if val == "Q47038375":
             print(key) 
 
-with open("/scratch/mallika/Wikidata/Wikidata/knowledge graphs/entity2id.txt") as f:
+with open("/scratch/mallika/wikidata_translation_v1.tsv?fbclid=IwAR2_gVmlA8bhMqierg-iW6AnA_FuJ8ULdw6Zl-53pGcrzdszDwKGmjXo3C4") as f:
 
     line_count = 0
     vec_count = 0
@@ -34,7 +34,7 @@ with open("/scratch/mallika/Wikidata/Wikidata/knowledge graphs/entity2id.txt") a
     word_key_count = 0
     line = f.readline().strip() #ignoring the header line
     line = f.readline().strip()
-
+    
     while(line):
         
         line_count += 1
@@ -44,6 +44,8 @@ with open("/scratch/mallika/Wikidata/Wikidata/knowledge graphs/entity2id.txt") a
 
         vec_count += 1
         id, vec = line.split("\t", 1)
+        id = id.rsplit('/',1)
+        id = id[1][:-1]
         
         if id in cat_ids:
             if id not in id2vec:
