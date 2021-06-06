@@ -5,6 +5,7 @@ import numpy as np
 from Tree import cattree, articletree
 from ArticleMap import articlemap
 import copy
+import time
 import math
 
 class LabelMatcher():
@@ -91,12 +92,12 @@ class LabelMatcher():
 
     def get_matching_cats(self, catname, hts1):
         S1 = self.identify_articles_in_subtree(catname)
-        check_potential_p1 = self.identify_labels(S1, -hts1)
+        # check_potential_p1 = self.identify_labels(S1, -hts1)
 
         # print(S1)
         S2 = self.get_inlink_neighbours(S1)
         potential_p2 = self.identify_labels(S2, 3)
-        return potential_p2, check_potential_p1, len(S1)
+        return potential_p2, None, len(S1)
 
     def get_tfidf_scores(self, p12):
 
@@ -171,13 +172,13 @@ class LabelMatcher():
             
         # make sure that there are no ancestors if a->b->c, a and c in potential_p1, keep only c
         p1_map_p2 = {}
-        p1_map_p1 = {} #checkign whether p1 is good or no
+        # p1_map_p1 = {} #checkign whether p1 is good or no
         p1_map_art_subtree_size = {} #checkign whether p1 is good or no
         for p1 in potential_p1:        
             #print("\n\nWith label as", self.cattree.id2name[p1])
-            pot_p2, pot_p1, p1_art_subtree_size = self.get_matching_cats(p1, -3)
+            pot_p2, _, p1_art_subtree_size = self.get_matching_cats(p1, -3)
             p1_map_p2[p1] = pot_p2
-            p1_map_p1[p1] = pot_p1
+            # p1_map_p1[p1] = pot_p1
             p1_map_art_subtree_size[p1] = p1_art_subtree_size
             #print([(p2, self.cattree.id2name[p2], pot_p2[p2]) for p2 in pot_p2][:20])
             # break
@@ -189,26 +190,27 @@ class LabelMatcher():
         
         # print(p1_map_p1)
 
-        p1_fitness = {}
-        for p1 in potential_p1:
-            p1_fitness[p1] = 0
-            c = 0
-            for p11_dict in p1_map_p1.values():
-                if p1 in p11_dict:
-                    p1_fitness[p1] += p11_dict[p1]
-                    c+=1
-            # if c!=0:
-            #     p1_fitness[p1]/=c
+        # p1_fitness = {}
+        # for p1 in potential_p1:
+        #     p1_fitness[p1] = 0
+        #     c = 0
+        #     for p11_dict in p1_map_p1.values():
+        #         if p1 in p11_dict:
+        #             p1_fitness[p1] += p11_dict[p1]
+        #             c+=1
+        #     # if c!=0:
+        #     #     p1_fitness[p1]/=c
 
             
 
-        p1_fitness = dict(sorted(p1_fitness.items(), key=lambda item: item[1]))
+        # p1_fitness = dict(sorted(p1_fitness.items(), key=lambda item: item[1]))
 
         p1_map_art_subtree_size = dict(sorted(p1_map_art_subtree_size.items(), key=lambda item: item[1]))
 
         size_thres = 5000
         bad_cats = [cat for cat in p1_map_art_subtree_size.keys() if p1_map_art_subtree_size[cat] > size_thres] #TODO:adjust this value of 3?
-            
+
+        p2_set = {} 
 
         for p1 in p1_map_art_subtree_size.keys():
             
@@ -221,22 +223,38 @@ class LabelMatcher():
             
             pot_p2_dict = p1_map_p2_tfidf[p1]
             print("\n\nWith label as", self.cattree.id2name[p1], p1)
-            print(path)
+            # print(path)
             # print("Len pot p2", len(pot_p2_dict))
-            # print([(p2, self.cattree.id2name[p2], pot_p2_dict[p2]) for p2 in pot_p2_dict ][:20])
-            # print([(p11, self.cattree.id2name[p11], p1_map_p1[p1][p11]) for p11 in p1_map_p1[p1]][:20])
-            # print()
-            print("Subtree size", p1_map_art_subtree_size[p1])
-            print("Len of tfidf p1", len(p1_map_p1[p1]))
-            print("Depth in tree", p1_depths[p1])
-            # print("score", p1_depths[p1]*-1*len(p1_map_p1_tfidf[p1]))
-            print("score", p1_fitness[p1])
+            print([(p2, self.cattree.id2name[p2], pot_p2_dict[p2]) for p2 in pot_p2_dict ][:20])
 
-            # print([(p11, self.cattree.id2name[p11], p1_map_p1_tfidf[p1][p11]) for p11 in p1_map_p1_tfidf[p1]][:20])
-            # print()
-        
+            p2_set[p1] = set(list(pot_p2_dict.keys())[:5])
+
+
+        #Now taking the S3 from the p2
+        # for p1 in p2_set:
+        #     for p2 in p2_set[p1]:
+        #         print("\n\nWith p1 as %s and p2 as"%(self.cattree.id2name[p1]), self.cattree.id2name[p2], p2)       
+        #         S3 = self.identify_articles_in_subtree(p2)
+        #         possible_articles = set(list(S3.keys()))
+
+        #         for article in possible_articles:
+        #             try:
+        #                 print(self.articletree.id2name[article], end = "\t")
+        #             except:
+        #                 pass
+                    
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
-labelmatcher.get_matching_articles(17687501, 3)
+print(len(labelmatcher.cattree.id2name))
+# labelmatcher.get_matching_articles(17687501, 3)
 # labelmatcher.get_matching_articles(28712618, 3)
-# labelmatcher.get_matching_articles(47385064, 3)
+start_time = time.time()
+labelmatcher.get_matching_articles(47385064, 3)
 # labelmatcher.get_matching_articles(26761192, 3)
+end_time = time.time()
+
+print(end_time - start_time)
+
+# a = "3122-1,37756-1,354286-1,1690629-1,4508360-1,13384750-11,20306871-2,30874417-11,31401705-1,33384563-12,46877253-1"
+# for it in a.split(','):
+#     art = int(it.split('-')[0])
+#     print(labelmatcher.articletree.id2name[art], end = "\t")
