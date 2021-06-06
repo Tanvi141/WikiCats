@@ -66,7 +66,7 @@ print("Total vectors: ", vec_count)
 print("Total Cat vecs: ", cat_vec_count)
 print("Total Word Keys: ", word_key_count)
 
-diff = cat_ids.difference(found_cat_ids)        
+diff = cat_id2kg_vec.difference(found_cat_ids)        
 print(diff)
 
 
