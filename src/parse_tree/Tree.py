@@ -6,7 +6,7 @@ badlist  = [60159159, 59055138, 62028269, 63588168, 59055138, 59055145, 63587964
 
 class Tree():
 
-    def __init__(self, adj_list_filename, id_map_filename, extend_rev_adjlist = False):
+    def __init__(self, adj_list_filename, id_map_filename, extend_rev_adjlist = False, articles_to_include=[]):
 
         self.adjlist = {}
         self.rev_adjlist = {}
@@ -20,7 +20,8 @@ class Tree():
             node = int(node)
             nodelist = nodelist.split(",")
 
-            if node in badlist:
+            if (node in badlist) or node not in articles_to_include:
+                line = f.readline().strip("\n")
                 continue
 
             if node not in self.adjlist:    
@@ -39,7 +40,7 @@ class Tree():
                     except:
                         continue
                 
-                if next_node in badlist:
+                if (next_node in badlist) or next_node not in articles_to_include:
                     continue
 
                 self.adjlist[node].append((next_node,wt))
@@ -204,7 +205,3 @@ class Tree():
             ret_dict[node] = [(0,0,None)]
         
         return ret_dict
-
-cattree = Tree("../../data/al_subcat_tree.txt", '../../Union_Territories/Union Territories of India_cat_keys.txt', True)
-articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt")
-

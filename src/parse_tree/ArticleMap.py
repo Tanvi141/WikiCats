@@ -1,6 +1,6 @@
 class ArticleMap():
 
-    def __init__(self, filename):
+    def __init__(self, filename, articles_to_include=[]):
 
         self.cat_to_article = {}
         self.article_to_cat = {}
@@ -10,6 +10,11 @@ class ArticleMap():
         while(line):
             node, nodelist = line.split(":")
             node = int(node)
+
+            if node not in articles_to_include:
+                line = f.readline().strip("\n")
+                continue
+
             nodelist = nodelist.split(",")
         
             self.cat_to_article[node] = []
@@ -57,5 +62,3 @@ class ArticleMap():
                 else:
                     raise Exception("Article is not in the Union Territories catrgory")
         return to_ret
-
-articlemap = ArticleMap("../../data/consolidated_subpages.txt")
