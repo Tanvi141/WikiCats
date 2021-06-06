@@ -276,15 +276,15 @@ labelmatcher = LabelMatcher(cattree, articletree, articlemap)
 # labelmatcher.get_matching_articles(47385064, 3)
 # labelmatcher.get_matching_articles(26761192, 3)
 
-threads = []
-for funky_article in tqdm.tqdm(art_list):
-    t = threading.Thread(target=labelmatcher.get_matching_articles, args=(funky_article, 3,))
-    threads.append(t)
-    t.start()
-    # labelmatcher.get_matching_articles(funky_article, 3)
+# threads = []
+# for funky_article in tqdm.tqdm(art_list):
+#     t = threading.Thread(target=labelmatcher.get_matching_articles, args=(funky_article, 3,))
+#     threads.append(t)
+#     t.start()
+#     # labelmatcher.get_matching_articles(funky_article, 3)
 
-for t in threads:
-    t.join()
+# for t in threads:
+#     t.join()
 
 
 # save('../../data/subset/'+sys.argv[1].rsplit('/',1)[-1][:-13]+'_adj_list.npy', asarray(final_global_list))

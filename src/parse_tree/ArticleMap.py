@@ -11,9 +11,10 @@ class ArticleMap():
             node, nodelist = line.split(":")
             node = int(node)
 
-            if node not in articles_to_include:
-                line = f.readline().strip("\n")
-                continue
+            # if node not in articles_to_include:
+            #     line = f.readline().strip("\n")
+            #     print("continuing", node)
+            #     continue
 
             nodelist = nodelist.split(",")
         
