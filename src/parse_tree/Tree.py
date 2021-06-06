@@ -20,7 +20,7 @@ class Tree():
             node = int(node)
             nodelist = nodelist.split(",")
 
-            if (node in badlist) or node not in articles_to_include:
+            if (node in badlist) or (node not in articles_to_include and len(articles_to_include) != 0):
                 line = f.readline().strip("\n")
                 continue
 
@@ -40,7 +40,7 @@ class Tree():
                     except:
                         continue
                 
-                if (next_node in badlist) or next_node not in articles_to_include:
+                if (next_node in badlist) or (next_node not in articles_to_include and len(articles_to_include) != 0):
                     continue
 
                 self.adjlist[node].append((next_node,wt))

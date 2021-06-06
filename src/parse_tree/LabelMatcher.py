@@ -266,9 +266,9 @@ print("running for set: ", sys.argv[1].rsplit('/',1)[-1][:-13])
 
 final_global_list = []
 cattree = Tree("../../data/al_subcat_tree.txt", '../../Union_Territories/Union Territories of India_cat_keys.txt', True)
-articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt", False)
+articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt", False, art_list)
 
-articlemap = ArticleMap("../../data/consolidated_subpages.txt")
+articlemap = ArticleMap("../../data/consolidated_subpages.txt", art_list)
 
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
 # labelmatcher.get_matching_articles(17687501, 3)
@@ -287,7 +287,7 @@ for t in threads:
     t.join()
 
 
-save('../../data/subset/'+sys.argv[1].rsplit('/',1)[-1][:-13]+'_adj_list.npy', asarray(final_global_list))
+# save('../../data/subset/'+sys.argv[1].rsplit('/',1)[-1][:-13]+'_adj_list.npy', asarray(final_global_list))
 
 
 

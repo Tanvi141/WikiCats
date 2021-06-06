@@ -60,5 +60,5 @@ class ArticleMap():
                 if ignorefaults:
                     pass
                 else:
-                    raise Exception("Article is not in the Union Territories catrgory")
+                    raise Exception("Article is not in the Union Territories catrgory", article)
         return to_ret
