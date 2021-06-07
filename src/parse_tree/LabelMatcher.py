@@ -137,7 +137,7 @@ class LabelMatcher():
         return p1p2
 
     def get_path(self, catname_ip, p1_depths, arts_so_far=[]):
-        to_ret = []
+        to_ret = [catname_ip]
 
         for catname in p1_depths:
             for item in p1_depths[catname]:
@@ -148,7 +148,7 @@ class LabelMatcher():
 
         return to_ret
 
-    def get_matching_articles(self, article, up_height):
+    def get_matching_articles(self, article, up_height, lock):
         
         #print("Querying for article", self.articletree.id2name[article])
         cats = self.articlemap.get_cats_of_articles([article])
@@ -235,6 +235,9 @@ class LabelMatcher():
             p2_set[p1] = set(list(pot_p2_dict.keys())[:5])
 
         #Now taking the S3 from the p2
+        article_edges = []
+        global missing_articles
+            
         for p1 in p2_set:
             for p2 in p2_set[p1]:
                 #print("\n\nWith p1 as %s and p2 as"%(self.cattree.id2name[p1]), self.cattree.id2name[p2], p2)       
@@ -242,14 +245,33 @@ class LabelMatcher():
                 possible_articles = set(list(S3.keys()))
 
                 for suggest_article in possible_articles:
+
                     if suggest_article in self.articletree.id2name:
-                        if suggest_article in self.articletree.adjlist[article]:
-                            val = 1
-                        else:
-                            val = 0
-                        final_global_list.append([article, suggest_article, val])
+                        try: #TODO: check for what to do for articles that were'nt in the WIKI dump
+                            if suggest_article in self.articletree.adjlist[article]:
+                                val = 1
+                            else:
+                                val = 0
+                            article_edges.append((article, suggest_article, val))
+                        except:
+                            missing_articles.add(article)
+                            return
+
                     else:
                         pass
+
+        
+        article_edges = np.asarray(list(set(article_edges)))
+        global final_global_np        
+
+        lock.acquire()
+        if not isinstance(final_global_np, np.ndarray):
+            final_global_np = np.copy(article_edges)
+        else:
+            final_global_np = np.vstack((final_global_np, article_edges))
+        lock.release()        
+        
+        #print("Shape global:", np.shape(final_global_np), flush=True)
 
 
 with open(sys.argv[1]) as f:
@@ -264,30 +286,45 @@ with open(sys.argv[1]) as f:
 print(len(art_list))
 print("running for set: ", sys.argv[1].rsplit('/',1)[-1][:-13])
 
-final_global_list = []
+final_global_np = None
+missing_articles = set()
+
 cattree = Tree("../../data/al_subcat_tree.txt", '../../Union_Territories/Union Territories of India_cat_keys.txt', True)
 articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt", False, art_list)
 
 articlemap = ArticleMap("../../data/consolidated_subpages.txt", art_list)
 
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
+my_lock = threading.Lock()
+
 # labelmatcher.get_matching_articles(17687501, 3)
 # labelmatcher.get_matching_articles(28712618, 3)
 # labelmatcher.get_matching_articles(47385064, 3)
 # labelmatcher.get_matching_articles(26761192, 3)
+# labelmatcher.get_matching_articles(47944041,3)
+#labelmatcher.get_matching_articles(66275156, 3, my_lock)
+#exit(0)
+
+my_lock = threading.Lock()
 
 threads = []
-for funky_article in tqdm.tqdm(art_list):
-    t = threading.Thread(target=labelmatcher.get_matching_articles, args=(funky_article, 3,))
+for i, funky_article in tqdm.tqdm(enumerate(art_list)):
+    t = threading.Thread(target=labelmatcher.get_matching_articles, args=(funky_article, 3, my_lock,))
     threads.append(t)
     t.start()
-    # labelmatcher.get_matching_articles(funky_article, 3)
+    #labelmatcher.get_matching_articles(funky_article, 3, my_lock)
+    if (i+1)%100 == 0:
+        with open(sys.argv[1].rsplit('/',1)[-1][:-13]+"_adjlog.txt","a+") as towr:
+            towr.write("For i="+str(i)+"\nArray size: "+str(final_global_np.shape)+"\nMissing Art:"+str(len(missing_articles))+"\n\n")
+    
 
 for t in threads:
     t.join()
 
+print("All missing articles:")
+print(missing_articles)
 
-save('../../data/subset/'+sys.argv[1].rsplit('/',1)[-1][:-13]+'_adj_list.npy', asarray(final_global_list))
+save('../../data/subset/'+sys.argv[1].rsplit('/',1)[-1][:-13]+'_adj_list.npy', asarray(final_global_np))
 
 
 

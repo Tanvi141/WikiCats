@@ -19,12 +19,13 @@ class Tree():
             node, nodelist = line.split(":")
             node = int(node)
             nodelist = nodelist.split(",")
+            
 
             if (node in badlist) or (node not in articles_to_include and len(articles_to_include) != 0):
                 line = f.readline().strip("\n")
                 continue
-
-            if node not in self.adjlist:    
+            
+            if node not in self.adjlist:
                 self.adjlist[node] = [] 
 
             for item in nodelist:

@@ -27,6 +27,9 @@ class ArticleMap():
                 except:
                     continue
                 
+                if next_node not in articles_to_include:
+                    continue
+                
                 self.cat_to_article[node].append(next_node)
 
                 if next_node not in self.article_to_cat:
