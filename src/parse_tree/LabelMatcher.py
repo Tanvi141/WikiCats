@@ -150,6 +150,9 @@ class LabelMatcher():
 
     def get_matching_articles(self, article, up_height, lock):
         
+        if article not in self.articletree.adjlist:
+           missing_articles.add(article)
+	   return
         #print("Querying for article", self.articletree.id2name[article])
         cats = self.articlemap.get_cats_of_articles([article])
         
@@ -247,15 +250,11 @@ class LabelMatcher():
                 for suggest_article in possible_articles:
 
                     if suggest_article in self.articletree.id2name:
-                        try: #TODO: check for what to do for articles that were'nt in the WIKI dump
-                            if suggest_article in self.articletree.adjlist[article]:
-                                val = 1
-                            else:
-                                val = 0
-                            article_edges.append((article, suggest_article, val))
-                        except:
-                            missing_articles.add(article)
-                            return
+                        if suggest_article in self.articletree.adjlist[article]:
+                            val = 1
+                        else:
+                            val = 0
+                        article_edges.append((article, suggest_article, val))
 
                     else:
                         pass
