@@ -1,0 +1,48 @@
+For i=99
+Array size: (41171, 3)
+Missing Art:0
+
+For i=199
+Array size: (112318, 3)
+Missing Art:0
+
+For i=299
+Array size: (211520, 3)
+Missing Art:0
+
+For i=399
+Array size: (290351, 3)
+Missing Art:0
+
+For i=499
+Array size: (371000, 3)
+Missing Art:0
+
+For i=599
+Array size: (489342, 3)
+Missing Art:0
+
+For i=699
+Array size: (568681, 3)
+Missing Art:0
+
+For i=799
+Array size: (666484, 3)
+Missing Art:0
+
+For i=899
+Array size: (767741, 3)
+Missing Art:0
+
+For i=999
+Array size: (885893, 3)
+Missing Art:0
+
+For i=1099
+Array size: (982156, 3)
+Missing Art:1
+
+For i=1199
+Array size: (1086694, 3)
+Missing Art:1
+
