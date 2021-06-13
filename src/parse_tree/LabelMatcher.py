@@ -150,9 +150,10 @@ class LabelMatcher():
 
     def get_matching_articles(self, article, up_height, lock):
         
+        global missing_articles
         if article not in self.articletree.adjlist:
            missing_articles.add(article)
-	   return
+           return
         #print("Querying for article", self.articletree.id2name[article])
         cats = self.articlemap.get_cats_of_articles([article])
         
@@ -238,29 +239,28 @@ class LabelMatcher():
             p2_set[p1] = set(list(pot_p2_dict.keys())[:5])
 
         #Now taking the S3 from the p2
-        article_edges = []
-        global missing_articles
+        article_edges = set()
             
+        possible_articles = set()
         for p1 in p2_set:
             for p2 in p2_set[p1]:
                 #print("\n\nWith p1 as %s and p2 as"%(self.cattree.id2name[p1]), self.cattree.id2name[p2], p2)       
                 S3 = self.identify_articles_in_subtree(p2)
-                possible_articles = set(list(S3.keys()))
+                possible_articles = possible_articles.union(set(list(S3.keys())))
 
-                for suggest_article in possible_articles:
+        for suggest_article in possible_articles:
 
-                    if suggest_article in self.articletree.id2name:
-                        if suggest_article in self.articletree.adjlist[article]:
-                            val = 1
-                        else:
-                            val = 0
-                        article_edges.append((article, suggest_article, val))
-
-                    else:
-                        pass
+            if suggest_article in self.articletree.id2name:
+                if suggest_article in self.articletree.adjlist[article]:
+                    val = 1
+                else:
+                    val = 0
+                article_edges.add((article, suggest_article, val))
+            else:
+                pass
 
         
-        article_edges = np.asarray(list(set(article_edges)))
+        article_edges = np.asarray(list(article_edges))
         global final_global_np        
 
         lock.acquire()
@@ -285,13 +285,20 @@ with open(sys.argv[1]) as f:
 print(len(art_list))
 print("running for set: ", sys.argv[1].rsplit('/',1)[-1][:-13])
 
+
 final_global_np = None
 missing_articles = set()
 
 cattree = Tree("../../data/al_subcat_tree.txt", '../../Union_Territories/Union Territories of India_cat_keys.txt', True)
-articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt", False, art_list)
+if sys.argv[1].rsplit('/',1)[-1][:-13] == "train":
+    articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt", False, art_list)
+else:
+    articletree = Tree("../../data/al_inlinks_tree.txt", "../../data/article_id_name.txt", False, [])
 
-articlemap = ArticleMap("../../data/consolidated_subpages.txt", art_list)
+if sys.argv[1].rsplit('/',1)[-1][:-13] == "train":
+    articlemap = ArticleMap("../../data/consolidated_subpages.txt", art_list)
+else:
+    articlemap = ArticleMap("../../data/consolidated_subpages.txt", [])
 
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
 my_lock = threading.Lock()

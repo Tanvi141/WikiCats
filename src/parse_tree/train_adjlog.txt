@@ -1,80 +1,392 @@
 For i=99
-Array size: (78425, 3)
+Array size: (48039, 3)
 Missing Art:0
 
 For i=199
-Array size: (211168, 3)
-Missing Art:0
+Array size: (175444, 3)
+Missing Art:1
 
 For i=299
-Array size: (498746, 3)
-Missing Art:0
+Array size: (453941, 3)
+Missing Art:1
 
 For i=399
-Array size: (910103, 3)
-Missing Art:1
+Array size: (756812, 3)
+Missing Art:2
 
 For i=499
-Array size: (1429454, 3)
-Missing Art:1
+Array size: (1190161, 3)
+Missing Art:2
 
 For i=599
-Array size: (1992729, 3)
-Missing Art:2
+Array size: (1618489, 3)
+Missing Art:3
 
 For i=699
-Array size: (2617912, 3)
-Missing Art:2
+Array size: (1935694, 3)
+Missing Art:3
 
 For i=799
-Array size: (3070897, 3)
-Missing Art:2
+Array size: (2324762, 3)
+Missing Art:3
 
 For i=899
-Array size: (3538914, 3)
-Missing Art:3
+Array size: (2660549, 3)
+Missing Art:4
 
 For i=999
-Array size: (3976086, 3)
-Missing Art:3
+Array size: (3204525, 3)
+Missing Art:4
 
 For i=1099
-Array size: (4009303, 3)
-Missing Art:3
+Array size: (3542397, 3)
+Missing Art:4
 
 For i=1199
-Array size: (4009303, 3)
-Missing Art:3
+Array size: (4032149, 3)
+Missing Art:4
 
 For i=1299
-Array size: (4009303, 3)
-Missing Art:3
+Array size: (4422924, 3)
+Missing Art:4
 
 For i=1399
-Array size: (4009303, 3)
+Array size: (4636114, 3)
 Missing Art:4
 
 For i=1499
-Array size: (4009303, 3)
+Array size: (4636114, 3)
 Missing Art:4
 
 For i=1599
-Array size: (4009303, 3)
-Missing Art:4
+Array size: (4636114, 3)
+Missing Art:5
 
 For i=1699
-Array size: (4009303, 3)
-Missing Art:4
+Array size: (4636114, 3)
+Missing Art:5
 
 For i=1799
-Array size: (4009303, 3)
+Array size: (4636114, 3)
 Missing Art:5
 
 For i=1899
-Array size: (4009303, 3)
+Array size: (4636114, 3)
 Missing Art:5
 
 For i=1999
-Array size: (4009303, 3)
+Array size: (4636114, 3)
 Missing Art:5
+
+For i=2099
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2199
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2299
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2399
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2499
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2599
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2699
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2799
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2899
+Array size: (4636114, 3)
+Missing Art:5
+
+For i=2999
+Array size: (4636114, 3)
+Missing Art:6
+
+For i=3099
+Array size: (4636114, 3)
+Missing Art:7
+
+For i=3199
+Array size: (4636114, 3)
+Missing Art:7
+
+For i=3299
+Array size: (4636114, 3)
+Missing Art:7
+
+For i=3399
+Array size: (4636114, 3)
+Missing Art:8
+
+For i=3499
+Array size: (4636114, 3)
+Missing Art:8
+
+For i=99
+Array size: (58541, 3)
+Missing Art:0
+
+For i=199
+Array size: (132132, 3)
+Missing Art:1
+
+For i=299
+Array size: (403778, 3)
+Missing Art:1
+
+For i=399
+Array size: (699418, 3)
+Missing Art:2
+
+For i=499
+Array size: (1191057, 3)
+Missing Art:2
+
+For i=599
+Array size: (1715624, 3)
+Missing Art:3
+
+For i=699
+Array size: (2173206, 3)
+Missing Art:3
+
+For i=799
+Array size: (2610392, 3)
+Missing Art:3
+
+For i=899
+Array size: (3017360, 3)
+Missing Art:4
+
+For i=999
+Array size: (3404295, 3)
+Missing Art:4
+
+For i=1099
+Array size: (3814668, 3)
+Missing Art:4
+
+For i=1199
+Array size: (4227031, 3)
+Missing Art:4
+
+For i=1299
+Array size: (4495850, 3)
+Missing Art:4
+
+For i=1399
+Array size: (4637443, 3)
+Missing Art:4
+
+For i=1499
+Array size: (4637443, 3)
+Missing Art:4
+
+For i=1599
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=1699
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=1799
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=1899
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=1999
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2099
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2199
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2299
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2399
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2499
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2599
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2699
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2799
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2899
+Array size: (4637443, 3)
+Missing Art:5
+
+For i=2999
+Array size: (4637443, 3)
+Missing Art:6
+
+For i=3099
+Array size: (4637443, 3)
+Missing Art:7
+
+For i=3199
+Array size: (4637443, 3)
+Missing Art:7
+
+For i=3299
+Array size: (4637443, 3)
+Missing Art:7
+
+For i=3399
+Array size: (4637443, 3)
+Missing Art:8
+
+For i=3499
+Array size: (4637443, 3)
+Missing Art:8
+
+For i=3599
+Array size: (4637443, 3)
+Missing Art:8
+
+For i=3699
+Array size: (4637443, 3)
+Missing Art:8
+
+For i=3799
+Array size: (4637443, 3)
+Missing Art:8
+
+For i=3899
+Array size: (4637443, 3)
+Missing Art:8
+
+For i=3999
+Array size: (4637443, 3)
+Missing Art:8
+
+For i=4099
+Array size: (4637443, 3)
+Missing Art:8
+
+For i=4199
+Array size: (4637443, 3)
+Missing Art:10
+
+For i=4299
+Array size: (4637443, 3)
+Missing Art:10
+
+For i=4399
+Array size: (4637443, 3)
+Missing Art:10
+
+For i=4499
+Array size: (4637443, 3)
+Missing Art:10
+
+For i=4599
+Array size: (4637443, 3)
+Missing Art:11
+
+For i=4699
+Array size: (4637443, 3)
+Missing Art:11
+
+For i=4799
+Array size: (4637443, 3)
+Missing Art:12
+
+For i=4899
+Array size: (4637443, 3)
+Missing Art:12
+
+For i=4999
+Array size: (4637443, 3)
+Missing Art:12
+
+For i=5099
+Array size: (4637443, 3)
+Missing Art:12
+
+For i=5199
+Array size: (4637443, 3)
+Missing Art:13
+
+For i=5299
+Array size: (4637443, 3)
+Missing Art:13
+
+For i=5399
+Array size: (4637443, 3)
+Missing Art:13
+
+For i=5499
+Array size: (4637443, 3)
+Missing Art:13
+
+For i=5599
+Array size: (4637443, 3)
+Missing Art:13
+
+For i=5699
+Array size: (4637443, 3)
+Missing Art:13
+
+For i=5799
+Array size: (4637443, 3)
+Missing Art:15
+
+For i=5899
+Array size: (4637443, 3)
+Missing Art:17
+
+For i=5999
+Array size: (4637443, 3)
+Missing Art:18
+
+For i=6099
+Array size: (4637443, 3)
+Missing Art:19
+
+For i=6199
+Array size: (4637443, 3)
+Missing Art:19
+
+For i=6299
+Array size: (4637443, 3)
+Missing Art:19
 
