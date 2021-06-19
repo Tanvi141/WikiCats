@@ -148,9 +148,11 @@ class LabelMatcher():
 
         return to_ret
 
-    def get_matching_articles(self, article, up_height, lock):
+    def get_matching_articles(self, article, up_height, lock, a_num):
         
         global missing_articles
+        global one_edges
+
         if article not in self.articletree.adjlist:
            missing_articles.add(article)
            return
@@ -236,7 +238,7 @@ class LabelMatcher():
             # #print("Len pot p2", len(pot_p2_dict))
             #print([(p2, self.cattree.id2name[p2], pot_p2_dict[p2]) for p2 in pot_p2_dict ][:20])
 
-            p2_set[p1] = set(list(pot_p2_dict.keys())[:5])
+            p2_set[p1] = set(list(pot_p2_dict.keys())) #[:5] initially
 
         #Now taking the S3 from the p2
         article_edges = set()
@@ -253,24 +255,38 @@ class LabelMatcher():
             if suggest_article in self.articletree.id2name:
                 if suggest_article in self.articletree.adjlist[article]:
                     val = 1
+                    one_edges += 1
                 else:
                     val = 0
                 article_edges.add((article, suggest_article, val))
             else:
                 pass
 
-        
         article_edges = np.asarray(list(article_edges))
-        global final_global_np        
+
+        global final_global_np
+        global global_articles
 
         lock.acquire()
+        if len(article_edges) == 0:
+            with open(sys.argv[1].rsplit('/',1)[-1][:-13]+"_adjlog.txt","a+") as towr:
+                towr.write("**** "+str(article)+"For i="+str(global_articles)+"\nArray size: "+str(final_global_np.shape)+"\nMissing Art:"+str(len(missing_articles))+"\nOne Edeges = "+str(one_edges)+"\n\n")
+            global_articles += 1
+            return
+
         if not isinstance(final_global_np, np.ndarray):
             final_global_np = np.copy(article_edges)
         else:
             final_global_np = np.vstack((final_global_np, article_edges))
+
+        global_articles += 1
+        if global_articles % 25 == 0:
+            save('../../data/subset/' + sys.argv[1].rsplit('/',1)[-1][:-13]+str(global_articles//25)+".npy", final_global_np)
+            with open(sys.argv[1].rsplit('/',1)[-1][:-13]+"_adjlog.txt","a+") as towr:
+                towr.write("#### For i="+str(global_articles)+"\nArray size: "+str(final_global_np.shape)+"\nMissing Art:"+str(len(missing_articles))+"\nOne Edeges = "+str(one_edges)+"\n\n")
+            final_global_np = None
+
         lock.release()        
-        
-        #print("Shape global:", np.shape(final_global_np), flush=True)
 
 
 with open(sys.argv[1]) as f:
@@ -288,6 +304,7 @@ print("running for set: ", sys.argv[1].rsplit('/',1)[-1][:-13])
 
 final_global_np = None
 missing_articles = set()
+global_articles = 0
 
 cattree = Tree("../../data/al_subcat_tree.txt", '../../Union_Territories/Union Territories of India_cat_keys.txt', True)
 if sys.argv[1].rsplit('/',1)[-1][:-13] == "train":
@@ -302,6 +319,10 @@ else:
 
 labelmatcher = LabelMatcher(cattree, articletree, articlemap)
 my_lock = threading.Lock()
+one_edges = 0
+
+my_lock = threading.Lock()
+threads = []
 
 # labelmatcher.get_matching_articles(17687501, 3)
 # labelmatcher.get_matching_articles(28712618, 3)
@@ -309,20 +330,14 @@ my_lock = threading.Lock()
 # labelmatcher.get_matching_articles(26761192, 3)
 # labelmatcher.get_matching_articles(47944041,3)
 #labelmatcher.get_matching_articles(66275156, 3, my_lock)
+#labelmatcher.get_matching_articles(54532594, 3, my_lock, 1)
 #exit(0)
 
-my_lock = threading.Lock()
-
-threads = []
 for i, funky_article in tqdm.tqdm(enumerate(art_list)):
-    t = threading.Thread(target=labelmatcher.get_matching_articles, args=(funky_article, 3, my_lock,))
+    t = threading.Thread(target=labelmatcher.get_matching_articles, args=(funky_article, 3, my_lock,i,))
     threads.append(t)
     t.start()
-    #labelmatcher.get_matching_articles(funky_article, 3, my_lock)
-    if (i+1)%100 == 0:
-        with open(sys.argv[1].rsplit('/',1)[-1][:-13]+"_adjlog.txt","a+") as towr:
-            towr.write("For i="+str(i)+"\nArray size: "+str(final_global_np.shape)+"\nMissing Art:"+str(len(missing_articles))+"\n\n")
-    
+    #labelmatcher.get_matching_articles(funky_article, 3, my_lock, i)
 
 for t in threads:
     t.join()
@@ -330,7 +345,9 @@ for t in threads:
 print("All missing articles:")
 print(missing_articles)
 
-save('../../data/subset/'+sys.argv[1].rsplit('/',1)[-1][:-13]+'_adj_list.npy', asarray(final_global_np))
+save('../../data/subset/' + sys.argv[1].rsplit('/',1)[-1][:-13]+str(global_articles//25 + 1)+".npy", final_global_np)
+with open(sys.argv[1].rsplit('/',1)[-1][:-13]+"_adjlog.txt","a+") as towr:
+    towr.write("#### For i="+str(global_articles)+"\nArray size: "+str(final_global_np.shape)+"\nMissing Art:"+str(len(missing_articles))+"\nOne Edeges = "+str(one_edges)+"\n\n")
 
 
 
