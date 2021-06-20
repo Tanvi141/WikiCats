@@ -333,11 +333,23 @@ threads = []
 #labelmatcher.get_matching_articles(54532594, 3, my_lock, 1)
 #exit(0)
 
-for i, funky_article in tqdm.tqdm(enumerate(art_list)):
-    t = threading.Thread(target=labelmatcher.get_matching_articles, args=(funky_article, 3, my_lock,i,))
+num_threads = 8
+
+def thread_function(index, my_lock):
+    for jj in range(index, len(art_list), num_threads):
+        labelmatcher.get_matching_articles(art_list[jj], 3, my_lock, jj)
+
+
+#for i, funky_article in tqdm.tqdm(enumerate(art_list)):
+ #   t = threading.Thread(target=labelmatcher.get_matching_articles, args=(funky_article, 3, my_lock,i,))
+  #  threads.append(t)
+   # t.start()
+    #labelmatcher.get_matching_articles(funky_article, 3, my_lock, i)
+
+for ind in range(num_threads):
+    t = threading.Thread(target=thread_function, args=(ind, my_lock))
     threads.append(t)
     t.start()
-    #labelmatcher.get_matching_articles(funky_article, 3, my_lock, i)
 
 for t in threads:
     t.join()

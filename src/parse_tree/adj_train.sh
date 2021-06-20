@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -n 1
-#SBATCH --mem-per-cpu=8G
+#SBATCH --mem-per-cpu=12G
 #SBATCH -o adj_train_op.txt 
 #SBATCH --job-name=adj_train
 #SBATCH --time=1-00:00:00
