@@ -244,8 +244,12 @@ class LabelMatcher():
         article_edges = set()
             
         possible_articles = set()
+        p2_seen = set()
         for p1 in p2_set:
             for p2 in p2_set[p1]:
+                if p2 in p2_seen:
+                    continue
+                p2_seen.add(p2)
                 #print("\n\nWith p1 as %s and p2 as"%(self.cattree.id2name[p1]), self.cattree.id2name[p2], p2)       
                 S3 = self.identify_articles_in_subtree(p2)
                 possible_articles = possible_articles.union(set(list(S3.keys())))
@@ -336,7 +340,7 @@ threads = []
 num_threads = 8
 
 def thread_function(index, my_lock):
-    for jj in range(index, len(art_list), num_threads):
+    for jj in tqdm.tqdm(range(index, len(art_list), num_threads)):
         labelmatcher.get_matching_articles(art_list[jj], 3, my_lock, jj)
 
 
