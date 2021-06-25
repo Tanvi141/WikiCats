@@ -257,7 +257,7 @@ class LabelMatcher():
         for suggest_article in possible_articles:
 
             if suggest_article in self.articletree.id2name:
-                if suggest_article in self.articletree.adjlist[article]:
+                if suggest_article in list(labelmatcher.articletree.get_neighbours(article, 1, "children").keys()):
                     val = 1
                     one_edges += 1
                 else:
@@ -276,6 +276,7 @@ class LabelMatcher():
             with open(sys.argv[1].rsplit('/',1)[-1][:-13]+"_adjlog.txt","a+") as towr:
                 towr.write("**** "+str(article)+"For i="+str(global_articles)+"\nArray size: "+str(final_global_np.shape)+"\nMissing Art:"+str(len(missing_articles))+"\nOne Edeges = "+str(one_edges)+"\n\n")
             global_articles += 1
+            lock.release()
             return
 
         if not isinstance(final_global_np, np.ndarray):
