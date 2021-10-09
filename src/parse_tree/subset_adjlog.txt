@@ -1,0 +1,5 @@
+#### For i=10
+Array size: (196250, 3)
+Missing Art:0
+One Edeges = 0
+

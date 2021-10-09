@@ -1,0 +1,265 @@
+#### For i=25
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 482
+
+#### For i=50
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 767
+
+#### For i=75
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 921
+
+**** 54532594For i=78
+Array size: (58875, 3)
+Missing Art:0
+One Edeges = 960
+
+#### For i=100
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 1082
+
+**** 42348894For i=123
+Array size: (451375, 3)
+Missing Art:0
+One Edeges = 1155
+
+#### For i=125
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 1169
+
+#### For i=150
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 1273
+
+#### For i=175
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 1416
+
+#### For i=200
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 1599
+
+#### For i=225
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 1788
+
+#### For i=250
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 1887
+
+#### For i=275
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2013
+
+#### For i=300
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2273
+
+#### For i=325
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2398
+
+#### For i=350
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2673
+
+#### For i=375
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2815
+
+#### For i=400
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 3025
+
+#### For i=425
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 3138
+
+#### For i=450
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 3249
+
+#### For i=475
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 3356
+
+**** 10825879For i=499
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 3573
+
+#### For i=525
+Array size: (961625, 3)
+Missing Art:0
+One Edeges = 3813
+
+#### For i=550
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 3940
+
+#### For i=575
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 4144
+
+#### For i=600
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 4306
+
+**** 47419488For i=617
+Array size: (333625, 3)
+Missing Art:0
+One Edeges = 4496
+
+#### For i=625
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 4579
+
+#### For i=650
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 4665
+
+#### For i=675
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 4827
+
+#### For i=700
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 5013
+
+#### For i=725
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 5238
+
+#### For i=750
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 5357
+
+#### For i=775
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 5448
+
+#### For i=800
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 5613
+
+#### For i=825
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 5750
+
+#### For i=850
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 5881
+
+#### For i=875
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 6065
+
+#### For i=900
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 6219
+
+#### For i=925
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 6339
+
+**** 4860010For i=945
+Array size: (392500, 3)
+Missing Art:0
+One Edeges = 6466
+
+#### For i=950
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 6514
+
+#### For i=975
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 6637
+
+#### For i=1000
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 6750
+
+#### For i=1025
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 6897
+
+#### For i=1050
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 7074
+
+#### For i=1075
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 7196
+
+#### For i=1100
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 7363
+
+#### For i=1125
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 7605
+
+#### For i=1150
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 7770
+
+#### For i=1175
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 7876
+
+**** 3401832For i=1187
+Array size: (235500, 3)
+Missing Art:2
+One Edeges = 7977
+
+#### For i=1198
+Array size: (431750, 3)
+Missing Art:2
+One Edeges = 8052
+

@@ -5,7 +5,7 @@
 #SBATCH -o adj_test_op.txt 
 #SBATCH --job-name=adj_test
 #SBATCH --mail-type=END
-#SBATCH --time=1-00:00:00
+#SBATCH --time=4-00:00:00
 #SBATCH -c 1
 
 python3 LabelMatcher.py ../../data/subset/test_articles.txt

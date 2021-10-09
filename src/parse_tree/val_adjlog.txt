@@ -1,52 +1,2691 @@
-For i=99
-Array size: (23983, 3)
-Missing Art:0
+^^^^ 11988656possible art len19663
 
-For i=99
-Array size: (21362, 3)
-Missing Art:0
+^^^^ 56249144possible art len19663
 
-For i=199
-Array size: (105125, 3)
-Missing Art:0
+^^^^ 25739133possible art len19663
 
-For i=299
-Array size: (172693, 3)
-Missing Art:0
+^^^^ 43994728possible art len19663
 
-For i=399
-Array size: (267228, 3)
-Missing Art:0
+^^^^ 12489541possible art len19663
 
-For i=499
-Array size: (365079, 3)
-Missing Art:0
+^^^^ 8203733possible art len19663
 
-For i=599
-Array size: (433067, 3)
+^^^^ 24164525possible art len19663
+
+^^^^ 46227813possible art len19663
+
+^^^^ 43939543possible art len19663
+
+^^^^ 47824170possible art len19663
+
+^^^^ 59247324possible art len19663
+
+^^^^ 1583092possible art len19663
+
+^^^^ 43698702possible art len19663
+
+^^^^ 58824798possible art len19663
+
+^^^^ 12511938possible art len19663
+
+^^^^ 716797possible art len19663
+
+^^^^ 7390096possible art len19663
+
+^^^^ 26347746possible art len19663
+
+^^^^ 24054309possible art len19663
+
+^^^^ 18307778possible art len19663
+
+^^^^ 52514288possible art len19663
+
+^^^^ 40678232possible art len19663
+
+^^^^ 35519399possible art len19663
+
+^^^^ 24240562possible art len19663
+
+^^^^ 294148possible art len19663
+
+#### For i=25
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 365
+
+^^^^ 41805599possible art len19663
+
+^^^^ 4029663possible art len19663
+
+^^^^ 5638317possible art len19663
+
+^^^^ 63307910possible art len19663
+
+^^^^ 5804960possible art len19663
+
+^^^^ 23937151possible art len19663
+
+^^^^ 53325521possible art len19663
+
+^^^^ 10090406possible art len19663
+
+^^^^ 54414409possible art len19663
+
+^^^^ 5808469possible art len19663
+
+^^^^ 5710428possible art len19663
+
+^^^^ 43467107possible art len19663
+
+^^^^ 7093427possible art len19663
+
+^^^^ 2822600possible art len19663
+
+^^^^ 31857760possible art len0
+
+**** 31857760For i=39
+Array size: (274750, 3)
+Missing Art:0
+One Edeges = 439
+
+^^^^ 13398952possible art len19663
+
+^^^^ 47101022possible art len19663
+
+^^^^ 49915726possible art len19663
+
+^^^^ 21745586possible art len19663
+
+^^^^ 34327579possible art len19663
+
+^^^^ 51328929possible art len19663
+
+^^^^ 27076232possible art len19663
+
+^^^^ 20809879possible art len19663
+
+^^^^ 28331183possible art len19663
+
+^^^^ 54726318possible art len19663
+
+#### For i=50
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 502
+
+^^^^ 28693044possible art len19663
+
+^^^^ 29175826possible art len19663
+
+^^^^ 30058212possible art len19663
+
+^^^^ 51546224possible art len19663
+
+^^^^ 29044589possible art len19663
+
+^^^^ 41169945possible art len19663
+
+^^^^ 50333443possible art len19663
+
+^^^^ 32976350possible art len19663
+
+^^^^ 36352838possible art len19663
+
+^^^^ 14693433possible art len19663
+
+^^^^ 8066165possible art len19663
+
+^^^^ 5796244possible art len19663
+
+^^^^ 36206525possible art len19663
+
+^^^^ 66117852possible art len19663
+
+^^^^ 16911443possible art len19663
+
+^^^^ 38717860possible art len19663
+
+^^^^ 29174707possible art len19663
+
+^^^^ 41008138possible art len19663
+
+^^^^ 480550possible art len19663
+
+^^^^ 18454538possible art len19663
+
+^^^^ 41457580possible art len19663
+
+^^^^ 41423788possible art len19663
+
+^^^^ 60143278possible art len19663
+
+^^^^ 38840403possible art len19663
+
+^^^^ 49434271possible art len19663
+
+#### For i=75
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 660
+
+^^^^ 10893142possible art len19663
+
+^^^^ 62393863possible art len19663
+
+^^^^ 39120813possible art len19663
+
+^^^^ 65427305possible art len19663
+
+^^^^ 19157472possible art len19663
+
+^^^^ 31150551possible art len0
+
+**** 31150551For i=80
+Array size: (98125, 3)
+Missing Art:0
+One Edeges = 693
+
+^^^^ 57015485possible art len19663
+
+^^^^ 29217510possible art len19663
+
+^^^^ 4096278possible art len19663
+
+^^^^ 4510972possible art len19663
+
+^^^^ 2979063possible art len19663
+
+^^^^ 66117919possible art len19663
+
+^^^^ 32342865possible art len19663
+
+^^^^ 34293593possible art len19663
+
+^^^^ 29003188possible art len19663
+
+^^^^ 24921746possible art len19663
+
+^^^^ 23963984possible art len19663
+
+^^^^ 2970234possible art len19663
+
+^^^^ 33677318possible art len19663
+
+^^^^ 24005636possible art len19663
+
+^^^^ 37085482possible art len19663
+
+^^^^ 5711940possible art len19663
+
+^^^^ 5213952possible art len19663
+
+^^^^ 53713501possible art len19663
+
+^^^^ 24651726possible art len19663
+
+#### For i=100
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 1126
+
+^^^^ 35666491possible art len19663
+
+^^^^ 26574797possible art len19663
+
+^^^^ 32899016possible art len19663
+
+^^^^ 43957617possible art len0
+
+**** 43957617For i=103
+Array size: (58875, 3)
+Missing Art:0
+One Edeges = 1131
+
+^^^^ 7690067possible art len19663
+
+^^^^ 41320463possible art len19663
+
+^^^^ 44500187possible art len19663
+
+^^^^ 1204373possible art len19663
+
+^^^^ 48451951possible art len19663
+
+^^^^ 12492748possible art len19663
+
+^^^^ 51777131possible art len19663
+
+^^^^ 58476082possible art len19663
+
+^^^^ 44397682possible art len19663
+
+^^^^ 58323203possible art len19663
+
+^^^^ 2685486possible art len19663
+
+^^^^ 15327633possible art len19663
+
+^^^^ 36305610possible art len19663
+
+^^^^ 3781980possible art len19663
+
+^^^^ 8467930possible art len19663
+
+^^^^ 42446122possible art len19663
+
+^^^^ 21206388possible art len19663
+
+^^^^ 1308472possible art len19663
+
+^^^^ 42834047possible art len19663
+
+^^^^ 39436862possible art len19663
+
+^^^^ 57511869possible art len19663
+
+#### For i=125
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 1290
+
+^^^^ 32047117possible art len19663
+
+^^^^ 5528796possible art len19663
+
+^^^^ 5699256possible art len19663
+
+^^^^ 13553120possible art len19663
+
+^^^^ 35125827possible art len19663
+
+^^^^ 47128711possible art len19663
+
+^^^^ 51546210possible art len19663
+
+^^^^ 1422252possible art len19663
+
+^^^^ 42565820possible art len19663
+
+^^^^ 24009389possible art len19663
+
+^^^^ 52303880possible art len19663
+
+^^^^ 29044201possible art len19663
+
+^^^^ 641760possible art len19663
+
+^^^^ 8884976possible art len19663
+
+^^^^ 21436653possible art len19663
+
+^^^^ 11776777possible art len19663
+
+^^^^ 41349789possible art len19663
+
+^^^^ 60550470possible art len19663
+
+^^^^ 21294044possible art len19663
+
+^^^^ 42854389possible art len19663
+
+^^^^ 12473916possible art len19663
+
+^^^^ 33428388possible art len19663
+
+^^^^ 27667065possible art len19663
+
+^^^^ 52514487possible art len19663
+
+^^^^ 27888313possible art len19663
+
+#### For i=150
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 1408
+
+^^^^ 65350049possible art len19663
+
+^^^^ 51301588possible art len19663
+
+^^^^ 24113403possible art len19663
+
+^^^^ 38094782possible art len19663
+
+^^^^ 47595883possible art len19663
+
+^^^^ 64787897possible art len19663
+
+^^^^ 42224654possible art len19663
+
+^^^^ 24005574possible art len19663
+
+^^^^ 438714possible art len19663
+
+^^^^ 26531456possible art len19663
+
+^^^^ 31449685possible art len19663
+
+^^^^ 32910179possible art len19663
+
+^^^^ 65364313possible art len19663
+
+^^^^ 7062871possible art len19663
+
+^^^^ 35847883possible art len19663
+
+^^^^ 12405002possible art len19663
+
+^^^^ 5622415possible art len19663
+
+^^^^ 2952198possible art len19663
+
+^^^^ 64000286possible art len19663
+
+^^^^ 25766927possible art len19663
+
+^^^^ 56804611possible art len19663
+
+^^^^ 53380270possible art len19663
+
+^^^^ 15376854possible art len19663
+
+^^^^ 34787922possible art len19663
+
+^^^^ 52260695possible art len19663
+
+#### For i=175
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 1519
+
+^^^^ 26048168possible art len19663
+
+^^^^ 4761842possible art len19663
+
+^^^^ 60795704possible art len19663
+
+^^^^ 46935825possible art len19663
+
+^^^^ 7107684possible art len19663
+
+^^^^ 33474311possible art len19663
+
+^^^^ 50022159possible art len19663
+
+^^^^ 46507326possible art len19663
+
+^^^^ 23604725possible art len19663
+
+^^^^ 52186380possible art len19663
+
+^^^^ 32453695possible art len19663
+
+^^^^ 29341648possible art len19663
+
+^^^^ 31237027possible art len19663
+
+^^^^ 11324815possible art len19663
+
+^^^^ 16989288possible art len19663
+
+^^^^ 21322892possible art len19663
+
+^^^^ 63754982possible art len19663
+
+^^^^ 24094915possible art len19663
+
+^^^^ 36438078possible art len19663
+
+^^^^ 7723510possible art len19663
+
+^^^^ 66120326possible art len19663
+
+^^^^ 1026099possible art len19663
+
+^^^^ 15235060possible art len19663
+
+^^^^ 42982828possible art len19663
+
+^^^^ 42800933possible art len19663
+
+#### For i=200
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 1619
+
+^^^^ 45111538possible art len19663
+
+^^^^ 32589612possible art len19663
+
+^^^^ 37117497possible art len19663
+
+^^^^ 46179423possible art len19663
+
+^^^^ 3401776possible art len0
+
+**** 3401776For i=204
+Array size: (78500, 3)
+Missing Art:0
+One Edeges = 1676
+
+^^^^ 31969603possible art len19663
+
+^^^^ 37243149possible art len19663
+
+^^^^ 29673828possible art len19663
+
+^^^^ 10046356possible art len19663
+
+^^^^ 64040076possible art len19663
+
+^^^^ 3674678possible art len19663
+
+^^^^ 4672226possible art len19663
+
+^^^^ 23973151possible art len19663
+
+^^^^ 60316785possible art len19663
+
+^^^^ 58735164possible art len19663
+
+^^^^ 2699497possible art len19663
+
+^^^^ 29053105possible art len19663
+
+^^^^ 23396534possible art len19663
+
+^^^^ 26448842possible art len19663
+
+^^^^ 34234420possible art len19663
+
+^^^^ 19682628possible art len19663
+
+^^^^ 47061271possible art len19663
+
+^^^^ 47338342possible art len19663
+
+^^^^ 46260593possible art len19663
+
+^^^^ 32536643possible art len19663
+
+#### For i=225
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 1751
+
+^^^^ 29796436possible art len19663
+
+^^^^ 3158534possible art len19663
+
+^^^^ 28713479possible art len19663
+
+^^^^ 25575112possible art len19663
+
+^^^^ 6056614possible art len19663
+
+^^^^ 34634926possible art len19663
+
+^^^^ 63695880possible art len19663
+
+^^^^ 66194326possible art len19663
+
+^^^^ 6540175possible art len19663
+
+^^^^ 42334815possible art len19663
+
+^^^^ 22784939possible art len19663
+
+^^^^ 38304958possible art len19663
+
+^^^^ 26048170possible art len19663
+
+^^^^ 26551217possible art len19663
+
+^^^^ 49363394possible art len19663
+
+^^^^ 5337860possible art len0
+
+**** 5337860For i=240
+Array size: (294375, 3)
+Missing Art:0
+One Edeges = 1836
+
+^^^^ 12474417possible art len19663
+
+^^^^ 39036181possible art len19663
+
+^^^^ 2336031possible art len19663
+
+^^^^ 31364941possible art len19663
+
+^^^^ 44076242possible art len19663
+
+^^^^ 63382982possible art len19663
+
+^^^^ 24025603possible art len19663
+
+^^^^ 42932254possible art len19663
+
+^^^^ 3708331possible art len19663
+
+#### For i=250
+Array size: (471000, 3)
+Missing Art:0
+One Edeges = 1883
+
+^^^^ 4508488possible art len19663
+
+^^^^ 45381003possible art len19663
+
+^^^^ 36358579possible art len19663
+
+^^^^ 33932908possible art len19663
+
+^^^^ 676919possible art len19663
+
+^^^^ 27530267possible art len19663
+
+^^^^ 22812886possible art len19663
+
+^^^^ 34963414possible art len19663
+
+^^^^ 10826600possible art len19663
+
+^^^^ 47453367possible art len19663
+
+^^^^ 24917114possible art len19663
+
+^^^^ 32908383possible art len19663
+
+^^^^ 39134621possible art len19663
+
+^^^^ 14895293possible art len19663
+
+^^^^ 24054327possible art len19663
+
+^^^^ 22832639possible art len19663
+
+^^^^ 33930676possible art len19663
+
+^^^^ 9874083possible art len19663
+
+^^^^ 1610384possible art len19663
+
+^^^^ 44415349possible art len19663
+
+^^^^ 42071787possible art len19663
+
+^^^^ 23906041possible art len19663
+
+^^^^ 47459360possible art len19663
+
+^^^^ 52440384possible art len19663
+
+^^^^ 34365764possible art len19663
+
+#### For i=275
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2006
+
+^^^^ 66119018possible art len19663
+
+^^^^ 1482129possible art len19663
+
+^^^^ 42634868possible art len19663
+
+^^^^ 45493174possible art len19663
+
+^^^^ 35552168possible art len19663
+
+^^^^ 32469506possible art len19663
+
+^^^^ 24049619possible art len19663
+
+^^^^ 13806720possible art len19663
+
+^^^^ 37895748possible art len19663
+
+^^^^ 38373425possible art len19663
+
+^^^^ 52214952possible art len19663
+
+^^^^ 24160746possible art len19663
+
+^^^^ 59640749possible art len19663
+
+^^^^ 7737649possible art len19663
+
+^^^^ 19469900possible art len19663
+
+^^^^ 48891027possible art len19663
+
+^^^^ 51642059possible art len19663
+
+^^^^ 47698012possible art len19663
+
+^^^^ 53431290possible art len19663
+
+^^^^ 2605391possible art len19663
+
+^^^^ 22651636possible art len19663
+
+^^^^ 47944041possible art len19663
+
+^^^^ 12192962possible art len19663
+
+^^^^ 14077476possible art len19663
+
+^^^^ 27581587possible art len19663
+
+#### For i=300
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2148
+
+^^^^ 55705932possible art len19663
+
+^^^^ 23166227possible art len19663
+
+^^^^ 4224262possible art len19663
+
+^^^^ 45685304possible art len19663
+
+^^^^ 41647976possible art len19663
+
+^^^^ 40466076possible art len19663
+
+^^^^ 25565495possible art len19663
+
+^^^^ 39072402possible art len19663
+
+^^^^ 3806841possible art len19663
+
+^^^^ 31707893possible art len19663
+
+^^^^ 60617790possible art len19663
+
+^^^^ 35821599possible art len19663
+
+^^^^ 41730516possible art len19663
+
+^^^^ 43076183possible art len19663
+
+^^^^ 22286176possible art len19663
+
+^^^^ 20836890possible art len19663
+
+^^^^ 14358778possible art len19663
+
+^^^^ 53138619possible art len19663
+
+^^^^ 42897370possible art len19663
+
+^^^^ 43578247possible art len19663
+
+^^^^ 12273862possible art len19663
+
+^^^^ 10963367possible art len19663
+
+^^^^ 64132811possible art len19663
+
+^^^^ 38372551possible art len19663
+
+^^^^ 22886245possible art len19663
+
+#### For i=325
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2312
+
+^^^^ 39417978possible art len19663
+
+^^^^ 24113553possible art len19663
+
+^^^^ 52899575possible art len19663
+
+^^^^ 29118697possible art len19663
+
+^^^^ 23407613possible art len19663
+
+^^^^ 60771487possible art len19663
+
+^^^^ 42781574possible art len19663
+
+^^^^ 4118643possible art len19663
+
+^^^^ 40240541possible art len19663
+
+^^^^ 51073663possible art len19663
+
+^^^^ 53403968possible art len19663
+
+^^^^ 19136692possible art len19663
+
+^^^^ 6193395possible art len19663
+
+^^^^ 24034616possible art len19663
+
+^^^^ 62655917possible art len19663
+
+^^^^ 36944492possible art len19663
+
+^^^^ 59221701possible art len19663
+
+^^^^ 32469135possible art len19663
+
+^^^^ 1306874possible art len19663
+
+^^^^ 63076989possible art len19663
+
+^^^^ 3204566possible art len19663
+
+^^^^ 7836477possible art len19663
+
+^^^^ 23638470possible art len19663
+
+^^^^ 45634739possible art len19663
+
+^^^^ 45462313possible art len19663
+
+#### For i=350
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2401
+
+^^^^ 291884possible art len19663
+
+^^^^ 24015290possible art len19663
+
+^^^^ 7480889possible art len19663
+
+^^^^ 41063510possible art len19663
+
+^^^^ 1927501possible art len19663
+
+^^^^ 62202856possible art len19663
+
+^^^^ 38818981possible art len0
+
+**** 38818981For i=356
+Array size: (117750, 3)
+Missing Art:0
+One Edeges = 2448
+
+^^^^ 37021428possible art len19663
+
+^^^^ 53947500possible art len19663
+
+^^^^ 58133417possible art len19663
+
+^^^^ 11498110possible art len19663
+
+^^^^ 38581984possible art len19663
+
+^^^^ 36807694possible art len19663
+
+^^^^ 5708447possible art len19663
+
+^^^^ 53982977possible art len19663
+
+^^^^ 38361233possible art len19663
+
+^^^^ 37996807possible art len19663
+
+^^^^ 47338612possible art len19663
+
+^^^^ 49658501possible art len0
+
+**** 49658501For i=368
+Array size: (333625, 3)
+Missing Art:0
+One Edeges = 2499
+
+^^^^ 12246003possible art len19663
+
+^^^^ 31473693possible art len19663
+
+^^^^ 61878367possible art len19663
+
+^^^^ 43784745possible art len19663
+
+^^^^ 39910920possible art len19663
+
+^^^^ 36590008possible art len19663
+
+#### For i=375
+Array size: (451375, 3)
+Missing Art:0
+One Edeges = 2523
+
+^^^^ 10892479possible art len19663
+
+^^^^ 2445710possible art len19663
+
+^^^^ 12601509possible art len19663
+
+^^^^ 419383possible art len19663
+
+^^^^ 16280532possible art len19663
+
+^^^^ 43787579possible art len19663
+
+^^^^ 27601400possible art len19663
+
+^^^^ 7702053possible art len19663
+
+^^^^ 53521906possible art len19663
+
+^^^^ 45319468possible art len19663
+
+^^^^ 59918228possible art len19663
+
+^^^^ 35799327possible art len19663
+
+^^^^ 66010774possible art len19663
+
+^^^^ 64523000possible art len19663
+
+^^^^ 7595964possible art len19663
+
+^^^^ 61336014possible art len19663
+
+^^^^ 48728510possible art len19663
+
+^^^^ 58825244possible art len19663
+
+^^^^ 34315924possible art len19663
+
+^^^^ 21843623possible art len19663
+
+^^^^ 25064703possible art len19663
+
+^^^^ 40001179possible art len19663
+
+^^^^ 36616687possible art len19663
+
+^^^^ 61236618possible art len19663
+
+^^^^ 33395546possible art len19663
+
+#### For i=400
+Array size: (490625, 3)
+Missing Art:0
+One Edeges = 2639
+
+^^^^ 7107742possible art len19663
+
+^^^^ 24004719possible art len19663
+
+^^^^ 52103082possible art len19663
+
+^^^^ 36731962possible art len19663
+
+^^^^ 49607999possible art len19663
+
+^^^^ 42495107possible art len19663
+
+^^^^ 11750020possible art len19663
+
+^^^^ 41313489possible art len19663
+
+^^^^ 14895591possible art len19663
+
+^^^^ 54373552possible art len19663
+
+^^^^ 62667730possible art len19663
+
+^^^^ 13555544possible art len19663
+
+^^^^ 20129176possible art len19663
+
+^^^^ 50570508possible art len19663
+
+^^^^ 15437873possible art len19663
+
+^^^^ 12539130possible art len19663
+
+^^^^ 16708072possible art len19663
+
+^^^^ 26794950possible art len19663
+
+^^^^ 26260230possible art len19663
+
+^^^^ 50170083possible art len19663
+
+^^^^ 54244910possible art len19663
+
+^^^^ 62672243possible art len19663
+
+^^^^ 32157266possible art len19663
+
+^^^^ 27541828possible art len19663
+
+^^^^ 27519300possible art len19663
+
+^^^^ 36348415possible art len19663
+
+#### For i=425
+Array size: (490625, 3)
 Missing Art:1
+One Edeges = 2779
 
-For i=699
-Array size: (503204, 3)
+^^^^ 49780405possible art len19663
+
+^^^^ 24195134possible art len19663
+
+^^^^ 52747667possible art len19663
+
+^^^^ 41248316possible art len19663
+
+^^^^ 44571718possible art len19663
+
+^^^^ 22725726possible art len19663
+
+^^^^ 296529possible art len19663
+
+^^^^ 26311047possible art len19663
+
+^^^^ 47986289possible art len19663
+
+^^^^ 54023976possible art len19663
+
+^^^^ 5606695possible art len19663
+
+^^^^ 43141880possible art len19663
+
+^^^^ 32941696possible art len19663
+
+^^^^ 24929899possible art len19663
+
+^^^^ 43696054possible art len19663
+
+^^^^ 22056975possible art len19663
+
+^^^^ 54755293possible art len19663
+
+^^^^ 12181620possible art len19663
+
+^^^^ 32682584possible art len19663
+
+^^^^ 29129792possible art len19663
+
+^^^^ 7456944possible art len19663
+
+^^^^ 52312423possible art len19663
+
+^^^^ 22177094possible art len19663
+
+^^^^ 47379547possible art len19663
+
+#### For i=450
+Array size: (490625, 3)
 Missing Art:1
+One Edeges = 2913
 
-For i=799
-Array size: (572920, 3)
+^^^^ 10636694possible art len19663
+
+^^^^ 29190033possible art len19663
+
+^^^^ 42884464possible art len19663
+
+^^^^ 2452810possible art len19663
+
+^^^^ 41801448possible art len19663
+
+^^^^ 42330733possible art len19663
+
+^^^^ 29247411possible art len19663
+
+^^^^ 4586944possible art len19663
+
+^^^^ 48966435possible art len19663
+
+^^^^ 33723308possible art len0
+
+**** 33723308For i=459
+Array size: (176625, 3)
 Missing Art:1
+One Edeges = 2967
 
-For i=899
-Array size: (670849, 3)
+^^^^ 14555139possible art len19663
+
+^^^^ 2332617possible art len19663
+
+^^^^ 40859358possible art len19663
+
+^^^^ 59214903possible art len19663
+
+^^^^ 4709289possible art len19663
+
+^^^^ 27804817possible art len19663
+
+^^^^ 29044024possible art len19663
+
+^^^^ 23984439possible art len19663
+
+^^^^ 40073024possible art len19663
+
+^^^^ 62682126possible art len0
+
+**** 62682126For i=469
+Array size: (353250, 3)
 Missing Art:1
+One Edeges = 3000
 
-For i=999
-Array size: (791225, 3)
+^^^^ 25728052possible art len19663
+
+^^^^ 12488310possible art len19663
+
+^^^^ 22617555possible art len19663
+
+^^^^ 21381874possible art len19663
+
+^^^^ 24774479possible art len19663
+
+#### For i=475
+Array size: (451375, 3)
+Missing Art:1
+One Edeges = 3016
+
+^^^^ 47874308possible art len19663
+
+^^^^ 49330813possible art len19663
+
+^^^^ 53975276possible art len19663
+
+^^^^ 34652292possible art len19663
+
+^^^^ 20368922possible art len19663
+
+^^^^ 35546892possible art len19663
+
+^^^^ 56320210possible art len19663
+
+^^^^ 49330110possible art len19663
+
+^^^^ 18457237possible art len19663
+
+^^^^ 44651362possible art len19663
+
+^^^^ 50666497possible art len19663
+
+^^^^ 17241125possible art len19663
+
+^^^^ 58109360possible art len19663
+
+^^^^ 53198047possible art len19663
+
+^^^^ 47105404possible art len19663
+
+^^^^ 50149397possible art len19663
+
+^^^^ 50181269possible art len19663
+
+^^^^ 22408637possible art len19663
+
+^^^^ 27428517possible art len19663
+
+^^^^ 11836652possible art len19663
+
+^^^^ 6237038possible art len19663
+
+^^^^ 2284385possible art len19663
+
+^^^^ 1150534possible art len19663
+
+^^^^ 45084621possible art len19663
+
+^^^^ 24525456possible art len19663
+
+#### For i=500
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 3143
+
+^^^^ 7108497possible art len19663
+
+^^^^ 12225340possible art len19663
+
+^^^^ 36608282possible art len19663
+
+^^^^ 31899242possible art len19663
+
+^^^^ 1269307possible art len19663
+
+^^^^ 29205470possible art len19663
+
+^^^^ 16091118possible art len19663
+
+^^^^ 56460599possible art len19663
+
+^^^^ 47314190possible art len19663
+
+^^^^ 41350900possible art len19663
+
+^^^^ 21451303possible art len19663
+
+^^^^ 17926276possible art len19663
+
+^^^^ 55121499possible art len19663
+
+^^^^ 36489293possible art len19663
+
+^^^^ 32223986possible art len19663
+
+^^^^ 27471008possible art len19663
+
+^^^^ 51474143possible art len19663
+
+^^^^ 24009199possible art len19663
+
+^^^^ 66120033possible art len19663
+
+^^^^ 5271077possible art len19663
+
+^^^^ 49714733possible art len19663
+
+^^^^ 18844982possible art len19663
+
+^^^^ 55869146possible art len19663
+
+^^^^ 2910814possible art len19663
+
+^^^^ 1285493possible art len19663
+
+#### For i=525
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 3301
+
+^^^^ 32027815possible art len19663
+
+^^^^ 31840826possible art len19663
+
+^^^^ 33207820possible art len19663
+
+^^^^ 50668637possible art len19663
+
+^^^^ 62869944possible art len19663
+
+^^^^ 65225192possible art len19663
+
+^^^^ 36749268possible art len19663
+
+^^^^ 24086069possible art len19663
+
+^^^^ 52675346possible art len19663
+
+^^^^ 16879034possible art len19663
+
+^^^^ 1241824possible art len19663
+
+^^^^ 29083404possible art len19663
+
+^^^^ 28260224possible art len19663
+
+^^^^ 30726959possible art len19663
+
+^^^^ 40606644possible art len19663
+
+^^^^ 56931940possible art len19663
+
+^^^^ 34407002possible art len19663
+
+^^^^ 42212513possible art len19663
+
+^^^^ 50248860possible art len19663
+
+^^^^ 57132215possible art len19663
+
+^^^^ 3108291possible art len19663
+
+^^^^ 39837735possible art len19663
+
+^^^^ 20438920possible art len19663
+
+^^^^ 22330510possible art len19663
+
+^^^^ 44397213possible art len19663
+
+#### For i=550
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 3402
+
+^^^^ 22002877possible art len19663
+
+^^^^ 23997253possible art len19663
+
+^^^^ 22253068possible art len19663
+
+^^^^ 24520802possible art len19663
+
+^^^^ 62551038possible art len19663
+
+^^^^ 36745807possible art len19663
+
+^^^^ 20055768possible art len19663
+
+^^^^ 7773536possible art len19663
+
+^^^^ 14709839possible art len19663
+
+^^^^ 6615263possible art len19663
+
+^^^^ 49514314possible art len19663
+
+^^^^ 39472333possible art len19663
+
+^^^^ 59933761possible art len19663
+
+^^^^ 50485024possible art len19663
+
+^^^^ 21175160possible art len19663
+
+^^^^ 9605359possible art len19663
+
+^^^^ 3536669possible art len19663
+
+^^^^ 51097045possible art len19663
+
+^^^^ 36937854possible art len19663
+
+^^^^ 24339867possible art len19663
+
+^^^^ 14035744possible art len19663
+
+^^^^ 20755925possible art len19663
+
+^^^^ 25889069possible art len19663
+
+^^^^ 47337912possible art len19663
+
+^^^^ 28535501possible art len19663
+
+#### For i=575
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 3544
+
+^^^^ 52493366possible art len19663
+
+^^^^ 24159091possible art len19663
+
+^^^^ 18256171possible art len19663
+
+^^^^ 58781411possible art len19663
+
+^^^^ 22234145possible art len19663
+
+^^^^ 35011847possible art len19663
+
+^^^^ 41350215possible art len19663
+
+^^^^ 63981384possible art len19663
+
+^^^^ 32199299possible art len19663
+
+^^^^ 12578390possible art len19663
+
+^^^^ 10636709possible art len19663
+
+^^^^ 7464978possible art len19663
+
+^^^^ 39485042possible art len19663
+
+^^^^ 12395134possible art len19663
+
+^^^^ 23984672possible art len19663
+
+^^^^ 25252456possible art len19663
+
+^^^^ 38329635possible art len19663
+
+^^^^ 61634355possible art len19663
+
+^^^^ 51575368possible art len19663
+
+^^^^ 44234411possible art len19663
+
+^^^^ 58014423possible art len19663
+
+^^^^ 37389919possible art len19663
+
+^^^^ 21762718possible art len19663
+
+^^^^ 45400295possible art len19663
+
+^^^^ 42240227possible art len19663
+
+#### For i=600
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 3704
+
+^^^^ 16475110possible art len19663
+
+^^^^ 36339669possible art len19663
+
+^^^^ 2141257possible art len19663
+
+^^^^ 24005028possible art len19663
+
+^^^^ 19997584possible art len19663
+
+^^^^ 33689831possible art len19663
+
+^^^^ 38362703possible art len19663
+
+^^^^ 60845299possible art len19663
+
+^^^^ 5697406possible art len19663
+
+^^^^ 4583611possible art len19663
+
+^^^^ 55900715possible art len19663
+
+^^^^ 43325028possible art len19663
+
+^^^^ 1389932possible art len19663
+
+^^^^ 15443581possible art len19663
+
+^^^^ 24170252possible art len19663
+
+^^^^ 39923220possible art len19663
+
+^^^^ 14968548possible art len19663
+
+^^^^ 1285409possible art len19663
+
+^^^^ 53727520possible art len19663
+
+^^^^ 2541643possible art len19663
+
+^^^^ 8142198possible art len19663
+
+^^^^ 7836200possible art len19663
+
+^^^^ 37576736possible art len19663
+
+^^^^ 14599714possible art len19663
+
+^^^^ 41500128possible art len19663
+
+#### For i=625
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 3828
+
+^^^^ 23624699possible art len19663
+
+^^^^ 64156418possible art len19663
+
+^^^^ 62097757possible art len19663
+
+^^^^ 43106947possible art len19663
+
+^^^^ 38493754possible art len19663
+
+^^^^ 15135895possible art len19663
+
+^^^^ 59170026possible art len19663
+
+^^^^ 16271364possible art len19663
+
+^^^^ 5322451possible art len19663
+
+^^^^ 49834261possible art len19663
+
+^^^^ 51876688possible art len19663
+
+^^^^ 24048981possible art len19663
+
+^^^^ 3739236possible art len19663
+
+^^^^ 51274209possible art len19663
+
+^^^^ 41349290possible art len19663
+
+^^^^ 5032908possible art len19663
+
+^^^^ 57126478possible art len19663
+
+^^^^ 18741770possible art len19663
+
+^^^^ 60917076possible art len19663
+
+^^^^ 12928147possible art len19663
+
+^^^^ 33608689possible art len19663
+
+^^^^ 43666121possible art len19663
+
+^^^^ 7850448possible art len19663
+
+^^^^ 34992586possible art len19663
+
+^^^^ 1956793possible art len19663
+
+#### For i=650
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 4109
+
+^^^^ 47246846possible art len19663
+
+^^^^ 26320212possible art len19663
+
+^^^^ 44263804possible art len19663
+
+^^^^ 52631552possible art len19663
+
+^^^^ 20940403possible art len19663
+
+^^^^ 26937201possible art len19663
+
+^^^^ 35538411possible art len19663
+
+^^^^ 39110711possible art len19663
+
+^^^^ 35910373possible art len19663
+
+^^^^ 2148202possible art len19663
+
+^^^^ 47314073possible art len19663
+
+^^^^ 2506546possible art len19663
+
+^^^^ 61853164possible art len19663
+
+^^^^ 51575459possible art len19663
+
+^^^^ 58027829possible art len19663
+
+^^^^ 36608288possible art len19663
+
+^^^^ 29053167possible art len19663
+
+^^^^ 34696760possible art len19663
+
+^^^^ 35547186possible art len19663
+
+^^^^ 57133819possible art len19663
+
+^^^^ 11959048possible art len19663
+
+^^^^ 29158915possible art len19663
+
+^^^^ 25235212possible art len19663
+
+^^^^ 16586173possible art len19663
+
+^^^^ 22718631possible art len19663
+
+#### For i=675
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 4341
+
+^^^^ 27365041possible art len19663
+
+^^^^ 60501010possible art len19663
+
+^^^^ 20808244possible art len19663
+
+^^^^ 47142618possible art len19663
+
+^^^^ 40338536possible art len19663
+
+^^^^ 28361696possible art len19663
+
+^^^^ 63048441possible art len19663
+
+^^^^ 49225859possible art len19663
+
+^^^^ 45447608possible art len19663
+
+^^^^ 17705593possible art len19663
+
+^^^^ 52258708possible art len19663
+
+^^^^ 7107560possible art len19663
+
+^^^^ 1934790possible art len19663
+
+^^^^ 2585894possible art len19663
+
+^^^^ 27877101possible art len19663
+
+^^^^ 66188788possible art len19663
+
+^^^^ 29103709possible art len19663
+
+^^^^ 14100746possible art len19663
+
+^^^^ 57899034possible art len19663
+
+^^^^ 41862961possible art len19663
+
+^^^^ 60496870possible art len19663
+
+^^^^ 33050290possible art len19663
+
+^^^^ 59991312possible art len19663
+
+^^^^ 50332562possible art len19663
+
+^^^^ 50072240possible art len19663
+
+#### For i=700
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 4453
+
+^^^^ 51881641possible art len19663
+
+^^^^ 29081068possible art len19663
+
+^^^^ 61953715possible art len19663
+
+^^^^ 66120038possible art len19663
+
+^^^^ 8838333possible art len19663
+
+^^^^ 63467009possible art len19663
+
+^^^^ 29667067possible art len19663
+
+^^^^ 53213467possible art len19663
+
+^^^^ 42624873possible art len19663
+
+^^^^ 19659438possible art len19663
+
+^^^^ 66120305possible art len19663
+
+^^^^ 58993544possible art len19663
+
+^^^^ 44609793possible art len19663
+
+^^^^ 35910202possible art len19663
+
+^^^^ 296472possible art len19663
+
+^^^^ 52932551possible art len19663
+
+^^^^ 42330600possible art len19663
+
+^^^^ 10573159possible art len19663
+
+^^^^ 47347174possible art len19663
+
+^^^^ 1629691possible art len19663
+
+^^^^ 18814695possible art len19663
+
+^^^^ 26438893possible art len19663
+
+^^^^ 14293991possible art len19663
+
+^^^^ 47472390possible art len19663
+
+^^^^ 28281226possible art len19663
+
+#### For i=725
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 4632
+
+^^^^ 27358805possible art len19663
+
+^^^^ 28535581possible art len19663
+
+^^^^ 57892894possible art len19663
+
+^^^^ 32310083possible art len19663
+
+^^^^ 25335335possible art len19663
+
+^^^^ 55007269possible art len19663
+
+^^^^ 36248406possible art len19663
+
+^^^^ 60105348possible art len19663
+
+^^^^ 51596791possible art len19663
+
+^^^^ 404253possible art len19663
+
+^^^^ 52303279possible art len19663
+
+^^^^ 41862360possible art len19663
+
+^^^^ 344551possible art len19663
+
+^^^^ 37078493possible art len19663
+
+^^^^ 42556335possible art len19663
+
+^^^^ 40767122possible art len19663
+
+^^^^ 19852626possible art len19663
+
+^^^^ 25405425possible art len19663
+
+^^^^ 30126491possible art len19663
+
+^^^^ 3567247possible art len19663
+
+^^^^ 24194204possible art len19663
+
+^^^^ 10636648possible art len19663
+
+^^^^ 24010132possible art len19663
+
+^^^^ 44903066possible art len19663
+
+^^^^ 63260341possible art len19663
+
+#### For i=750
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 4874
+
+^^^^ 2376120possible art len19663
+
+^^^^ 47883802possible art len19663
+
+^^^^ 54550744possible art len19663
+
+^^^^ 27404186possible art len19663
+
+^^^^ 66202503possible art len19663
+
+^^^^ 60721581possible art len19663
+
+^^^^ 31725688possible art len19663
+
+^^^^ 1683857possible art len19663
+
+^^^^ 50143544possible art len19663
+
+^^^^ 1737475possible art len19663
+
+^^^^ 37337164possible art len19663
+
+^^^^ 60081713possible art len19663
+
+^^^^ 41525743possible art len19663
+
+^^^^ 58612123possible art len19663
+
+^^^^ 49478727possible art len19663
+
+^^^^ 54852606possible art len19663
+
+^^^^ 29115895possible art len19663
+
+^^^^ 31627330possible art len19663
+
+^^^^ 41255769possible art len19663
+
+^^^^ 29113618possible art len19663
+
+^^^^ 27916590possible art len19663
+
+^^^^ 18686680possible art len19663
+
+^^^^ 51033666possible art len19663
+
+^^^^ 6146816possible art len19663
+
+^^^^ 25654941possible art len19663
+
+#### For i=775
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 5005
+
+^^^^ 24158748possible art len19663
+
+^^^^ 11443906possible art len19663
+
+^^^^ 52440738possible art len19663
+
+^^^^ 17403342possible art len19663
+
+^^^^ 44081312possible art len19663
+
+^^^^ 63911189possible art len19663
+
+^^^^ 3247089possible art len19663
+
+^^^^ 4125323possible art len19663
+
+^^^^ 24453852possible art len19663
+
+^^^^ 55891622possible art len19663
+
+^^^^ 7408959possible art len19663
+
+^^^^ 65254727possible art len19663
+
+^^^^ 62101059possible art len19663
+
+^^^^ 53745609possible art len19663
+
+^^^^ 63056002possible art len19663
+
+^^^^ 1858826possible art len19663
+
+^^^^ 38373045possible art len19663
+
+^^^^ 2927534possible art len19663
+
+^^^^ 63326826possible art len19663
+
+^^^^ 18628445possible art len19663
+
+^^^^ 27581940possible art len19663
+
+^^^^ 5798773possible art len19663
+
+^^^^ 28065537possible art len19663
+
+^^^^ 31777145possible art len19663
+
+^^^^ 6057061possible art len19663
+
+#### For i=800
+Array size: (490625, 3)
+Missing Art:1
+One Edeges = 5203
+
+^^^^ 4635746possible art len19663
+
+^^^^ 35910085possible art len19663
+
+^^^^ 63018396possible art len19663
+
+^^^^ 33060140possible art len19663
+
+^^^^ 42337371possible art len19663
+
+^^^^ 4086735possible art len19663
+
+^^^^ 31813805possible art len19663
+
+^^^^ 41156043possible art len19663
+
+^^^^ 54469452possible art len19663
+
+^^^^ 24760733possible art len19663
+
+^^^^ 2213684possible art len19663
+
+^^^^ 35124521possible art len19663
+
+^^^^ 53134517possible art len19663
+
+^^^^ 19316969possible art len19663
+
+^^^^ 8795817possible art len19663
+
+^^^^ 30527239possible art len19663
+
+^^^^ 48344471possible art len19663
+
+^^^^ 42302659possible art len19663
+
+^^^^ 54259490possible art len19663
+
+^^^^ 63152067possible art len19663
+
+^^^^ 24154406possible art len19663
+
+^^^^ 4433978possible art len19663
+
+^^^^ 18135406possible art len19663
+
+^^^^ 2799370possible art len19663
+
+^^^^ 3349478possible art len19663
+
+#### For i=825
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 5360
+
+^^^^ 43340482possible art len19663
+
+^^^^ 4838156possible art len19663
+
+^^^^ 42262019possible art len19663
+
+^^^^ 61496862possible art len19663
+
+^^^^ 16191206possible art len19663
+
+^^^^ 49330807possible art len19663
+
+^^^^ 37956898possible art len19663
+
+^^^^ 63131117possible art len19663
+
+^^^^ 25390677possible art len19663
+
+^^^^ 29074371possible art len19663
+
+^^^^ 39350503possible art len19663
+
+^^^^ 9322567possible art len19663
+
+^^^^ 41174695possible art len19663
+
+^^^^ 36196075possible art len19663
+
+^^^^ 36927222possible art len19663
+
+^^^^ 7809795possible art len19663
+
+^^^^ 50441924possible art len19663
+
+^^^^ 31608638possible art len19663
+
+^^^^ 35710478possible art len19663
+
+^^^^ 16550108possible art len19663
+
+^^^^ 21524114possible art len19663
+
+^^^^ 1906142possible art len19663
+
+^^^^ 900926possible art len19663
+
+^^^^ 1571316possible art len19663
+
+^^^^ 49208608possible art len19663
+
+#### For i=850
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 5484
+
+^^^^ 33277917possible art len19663
+
+^^^^ 29053048possible art len19663
+
+^^^^ 36210177possible art len19663
+
+^^^^ 7921817possible art len19663
+
+^^^^ 55937953possible art len19663
+
+^^^^ 66119999possible art len19663
+
+^^^^ 4612986possible art len19663
+
+^^^^ 47346115possible art len19663
+
+^^^^ 23968405possible art len19663
+
+^^^^ 2088074possible art len19663
+
+^^^^ 36566899possible art len19663
+
+^^^^ 24060213possible art len19663
+
+^^^^ 3783127possible art len19663
+
+^^^^ 44543740possible art len19663
+
+^^^^ 42314552possible art len19663
+
+^^^^ 14555975possible art len19663
+
+^^^^ 19712850possible art len19663
+
+^^^^ 6821714possible art len19663
+
+^^^^ 27643710possible art len19663
+
+^^^^ 25002042possible art len19663
+
+^^^^ 33207687possible art len19663
+
+^^^^ 32886857possible art len19663
+
+^^^^ 20631917possible art len19663
+
+^^^^ 63885416possible art len19663
+
+^^^^ 47047605possible art len19663
+
+#### For i=875
+Array size: (490625, 3)
+Missing Art:2
+One Edeges = 5616
+
+^^^^ 1306931possible art len19663
+
+^^^^ 7408468possible art len19663
+
+^^^^ 20845292possible art len19663
+
+^^^^ 26816389possible art len19663
+
+^^^^ 33971531possible art len19663
+
+^^^^ 66120337possible art len19663
+
+^^^^ 65161691possible art len19663
+
+^^^^ 4295269possible art len19663
+
+^^^^ 47112086possible art len19663
+
+^^^^ 63560394possible art len19663
+
+^^^^ 33331590possible art len19663
+
+^^^^ 35159895possible art len19663
+
+^^^^ 13728669possible art len19663
+
+^^^^ 60496737possible art len19663
+
+^^^^ 30196155possible art len19663
+
+^^^^ 1201004possible art len19663
+
+^^^^ 47531187possible art len19663
+
+^^^^ 26142933possible art len19663
+
+^^^^ 39696619possible art len19663
+
+^^^^ 61054646possible art len19663
+
+^^^^ 60163144possible art len19663
+
+^^^^ 3938487possible art len19663
+
+^^^^ 7835330possible art len19663
+
+^^^^ 19142414possible art len19663
+
+^^^^ 56079632possible art len19663
+
+#### For i=900
+Array size: (490625, 3)
 Missing Art:3
+One Edeges = 5789
 
-For i=1099
-Array size: (874797, 3)
-Missing Art:3
+^^^^ 7315158possible art len19663
 
-For i=1199
-Array size: (972448, 3)
+^^^^ 42643040possible art len19663
+
+^^^^ 52683115possible art len19663
+
+^^^^ 26001291possible art len19663
+
+^^^^ 53246338possible art len19663
+
+^^^^ 63561286possible art len19663
+
+^^^^ 55084408possible art len19663
+
+^^^^ 1162266possible art len19663
+
+^^^^ 55469977possible art len19663
+
+^^^^ 19024099possible art len19663
+
+^^^^ 33262776possible art len19663
+
+^^^^ 24074750possible art len19663
+
+^^^^ 34477999possible art len19663
+
+^^^^ 14015617possible art len19663
+
+^^^^ 6586459possible art len19663
+
+^^^^ 28934326possible art len19663
+
+^^^^ 29150898possible art len19663
+
+^^^^ 55901290possible art len19663
+
+^^^^ 29144043possible art len19663
+
+^^^^ 54450994possible art len19663
+
+^^^^ 3254180possible art len19663
+
+^^^^ 11940970possible art len0
+
+**** 11940970For i=921
+Array size: (412125, 3)
 Missing Art:3
+One Edeges = 5917
+
+^^^^ 60992844possible art len19663
+
+^^^^ 25097764possible art len19663
+
+^^^^ 29073745possible art len19663
+
+^^^^ 60019462possible art len19663
+
+#### For i=925
+Array size: (471000, 3)
+Missing Art:3
+One Edeges = 5944
+
+^^^^ 55339026possible art len19663
+
+^^^^ 20305401possible art len19663
+
+^^^^ 63893314possible art len19663
+
+^^^^ 32336498possible art len19663
+
+^^^^ 33255941possible art len19663
+
+^^^^ 43148537possible art len19663
+
+^^^^ 33585770possible art len19663
+
+^^^^ 45386073possible art len19663
+
+^^^^ 4111450possible art len19663
+
+^^^^ 1824828possible art len19663
+
+^^^^ 7026218possible art len19663
+
+^^^^ 26120567possible art len19663
+
+^^^^ 50407891possible art len19663
+
+^^^^ 21658937possible art len19663
+
+^^^^ 33852032possible art len19663
+
+^^^^ 2566728possible art len19663
+
+^^^^ 24060276possible art len19663
+
+^^^^ 24163140possible art len19663
+
+^^^^ 36323256possible art len19663
+
+^^^^ 26232265possible art len19663
+
+^^^^ 29064507possible art len19663
+
+^^^^ 42781611possible art len19663
+
+^^^^ 41474382possible art len19663
+
+^^^^ 22312238possible art len19663
+
+#### For i=950
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 6065
+
+^^^^ 20083560possible art len19663
+
+^^^^ 52514309possible art len19663
+
+^^^^ 43420500possible art len19663
+
+^^^^ 18809692possible art len19663
+
+^^^^ 48718789possible art len19663
+
+^^^^ 35826264possible art len19663
+
+^^^^ 32398693possible art len19663
+
+^^^^ 35861911possible art len19663
+
+^^^^ 59351935possible art len19663
+
+^^^^ 51022407possible art len19663
+
+^^^^ 44779152possible art len19663
+
+^^^^ 20740801possible art len19663
+
+^^^^ 49950624possible art len19663
+
+^^^^ 46663356possible art len19663
+
+^^^^ 23766093possible art len19663
+
+^^^^ 1308312possible art len19663
+
+^^^^ 50614550possible art len19663
+
+^^^^ 36564527possible art len19663
+
+^^^^ 23945537possible art len19663
+
+^^^^ 56085419possible art len19663
+
+^^^^ 32837368possible art len19663
+
+^^^^ 60174661possible art len19663
+
+^^^^ 41669614possible art len19663
+
+^^^^ 46728543possible art len19663
+
+^^^^ 51247392possible art len19663
+
+#### For i=975
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 6253
+
+^^^^ 3593981possible art len19663
+
+^^^^ 966831possible art len19663
+
+^^^^ 62458980possible art len19663
+
+^^^^ 14799580possible art len19663
+
+^^^^ 63966261possible art len19663
+
+^^^^ 59100925possible art len19663
+
+^^^^ 8656383possible art len19663
+
+^^^^ 7335063possible art len19663
+
+^^^^ 1308258possible art len19663
+
+^^^^ 52103166possible art len19663
+
+^^^^ 48788855possible art len19663
+
+^^^^ 48229112possible art len19663
+
+^^^^ 11860216possible art len19663
+
+^^^^ 43180879possible art len19663
+
+^^^^ 52230739possible art len19663
+
+^^^^ 1308058possible art len19663
+
+^^^^ 42923499possible art len19663
+
+^^^^ 33678927possible art len19663
+
+^^^^ 647667possible art len19663
+
+^^^^ 9433120possible art len19663
+
+^^^^ 24605569possible art len19663
+
+^^^^ 41117502possible art len19663
+
+^^^^ 52065164possible art len19663
+
+^^^^ 2271582possible art len19663
+
+^^^^ 24187648possible art len19663
+
+#### For i=1000
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 6335
+
+^^^^ 47853401possible art len19663
+
+^^^^ 22404159possible art len19663
+
+^^^^ 29573576possible art len19663
+
+^^^^ 3251353possible art len19663
+
+^^^^ 52378012possible art len19663
+
+^^^^ 12899329possible art len19663
+
+^^^^ 44760076possible art len19663
+
+^^^^ 51537109possible art len19663
+
+^^^^ 54933733possible art len19663
+
+^^^^ 32861851possible art len19663
+
+^^^^ 65286161possible art len19663
+
+^^^^ 17355859possible art len19663
+
+^^^^ 61177507possible art len19663
+
+^^^^ 6200618possible art len19663
+
+^^^^ 55924461possible art len19663
+
+^^^^ 63763751possible art len19663
+
+^^^^ 24028564possible art len19663
+
+^^^^ 56154087possible art len19663
+
+^^^^ 27380721possible art len19663
+
+^^^^ 43131866possible art len19663
+
+^^^^ 5648612possible art len19663
+
+^^^^ 19776420possible art len19663
+
+^^^^ 51193983possible art len19663
+
+^^^^ 43365509possible art len19663
+
+^^^^ 17651148possible art len19663
+
+#### For i=1025
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 6532
+
+^^^^ 1704570possible art len19663
+
+^^^^ 4979976possible art len19663
+
+^^^^ 31554769possible art len19663
+
+^^^^ 31993038possible art len19663
+
+^^^^ 62318942possible art len19663
+
+^^^^ 8503238possible art len19663
+
+^^^^ 61989952possible art len19663
+
+^^^^ 23986672possible art len19663
+
+^^^^ 51375853possible art len19663
+
+^^^^ 7631856possible art len19663
+
+^^^^ 41890662possible art len19663
+
+^^^^ 32019051possible art len19663
+
+^^^^ 11349902possible art len19663
+
+^^^^ 62852520possible art len19663
+
+^^^^ 32043881possible art len19663
+
+^^^^ 53065441possible art len19663
+
+^^^^ 20972451possible art len19663
+
+^^^^ 1650884possible art len19663
+
+^^^^ 38242193possible art len19663
+
+^^^^ 1801743possible art len19663
+
+^^^^ 1344262possible art len19663
+
+^^^^ 303611possible art len19663
+
+^^^^ 1907917possible art len19663
+
+^^^^ 46462242possible art len19663
+
+^^^^ 6705248possible art len19663
+
+#### For i=1050
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 6892
+
+^^^^ 3810976possible art len19663
+
+^^^^ 50796419possible art len19663
+
+^^^^ 54623278possible art len19663
+
+^^^^ 42874694possible art len19663
+
+^^^^ 9946149possible art len19663
+
+^^^^ 12352573possible art len19663
+
+^^^^ 24071577possible art len19663
+
+^^^^ 29262690possible art len19663
+
+^^^^ 59568290possible art len19663
+
+^^^^ 38208398possible art len19663
+
+^^^^ 276599possible art len19663
+
+^^^^ 61944066possible art len19663
+
+^^^^ 18631885possible art len19663
+
+^^^^ 27448930possible art len19663
+
+^^^^ 5301882possible art len19663
+
+^^^^ 43779024possible art len19663
+
+^^^^ 32028554possible art len19663
+
+^^^^ 48208594possible art len19663
+
+^^^^ 43740515possible art len19663
+
+^^^^ 5278086possible art len19663
+
+^^^^ 53974236possible art len19663
+
+^^^^ 31175792possible art len19663
+
+^^^^ 35216423possible art len19663
+
+^^^^ 52599886possible art len19663
+
+^^^^ 48665469possible art len19663
+
+#### For i=1075
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 7023
+
+^^^^ 39969438possible art len19663
+
+^^^^ 9483830possible art len19663
+
+^^^^ 52548106possible art len19663
+
+^^^^ 8822976possible art len19663
+
+^^^^ 39107763possible art len19663
+
+^^^^ 24195349possible art len19663
+
+^^^^ 8495280possible art len19663
+
+^^^^ 44830625possible art len19663
+
+^^^^ 55338950possible art len19663
+
+^^^^ 1520047possible art len19663
+
+^^^^ 8027522possible art len19663
+
+^^^^ 29131911possible art len19663
+
+^^^^ 1363528possible art len19663
+
+^^^^ 53833868possible art len19663
+
+^^^^ 64635291possible art len19663
+
+^^^^ 63111402possible art len19663
+
+^^^^ 7111896possible art len19663
+
+^^^^ 41532511possible art len19663
+
+^^^^ 32887810possible art len19663
+
+^^^^ 23463863possible art len19663
+
+^^^^ 8677505possible art len19663
+
+^^^^ 45595179possible art len19663
+
+^^^^ 5077227possible art len19663
+
+^^^^ 30724060possible art len19663
+
+^^^^ 41535984possible art len19663
+
+#### For i=1100
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 7183
+
+^^^^ 51705391possible art len19663
+
+^^^^ 55518043possible art len19663
+
+^^^^ 29389869possible art len19663
+
+^^^^ 39982359possible art len19663
+
+^^^^ 29161492possible art len19663
+
+^^^^ 34192703possible art len19663
+
+^^^^ 48596921possible art len19663
+
+^^^^ 19737630possible art len19663
+
+^^^^ 8001781possible art len19663
+
+^^^^ 50674061possible art len19663
+
+^^^^ 9511182possible art len19663
+
+^^^^ 29204445possible art len19663
+
+^^^^ 31796339possible art len19663
+
+^^^^ 7097843possible art len19663
+
+^^^^ 34726199possible art len19663
+
+^^^^ 43807810possible art len19663
+
+^^^^ 33207654possible art len19663
+
+^^^^ 1663878possible art len19663
+
+^^^^ 61089570possible art len19663
+
+^^^^ 33038201possible art len19663
+
+^^^^ 41379975possible art len19663
+
+^^^^ 24024839possible art len19663
+
+^^^^ 7850330possible art len19663
+
+^^^^ 4305571possible art len19663
+
+^^^^ 2978260possible art len19663
+
+#### For i=1125
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 7314
+
+^^^^ 16680106possible art len19663
+
+^^^^ 51999764possible art len19663
+
+^^^^ 25384962possible art len19663
+
+^^^^ 47596877possible art len19663
+
+^^^^ 38569664possible art len19663
+
+^^^^ 10902248possible art len19663
+
+^^^^ 5274764possible art len19663
+
+^^^^ 41932805possible art len19663
+
+^^^^ 24087786possible art len19663
+
+^^^^ 64477229possible art len19663
+
+^^^^ 21202329possible art len19663
+
+^^^^ 32028683possible art len0
+
+**** 32028683For i=1136
+Array size: (215875, 3)
+Missing Art:3
+One Edeges = 7381
+
+^^^^ 1128632possible art len19663
+
+^^^^ 22687504possible art len19663
+
+^^^^ 13552777possible art len19663
+
+^^^^ 8233057possible art len19663
+
+^^^^ 34292277possible art len19663
+
+^^^^ 5800789possible art len19663
+
+^^^^ 1380559possible art len19663
+
+^^^^ 4907132possible art len19663
+
+^^^^ 38154894possible art len19663
+
+^^^^ 62655897possible art len19663
+
+^^^^ 28900952possible art len19663
+
+^^^^ 29580540possible art len19663
+
+^^^^ 32028435possible art len19663
+
+#### For i=1150
+Array size: (471000, 3)
+Missing Art:3
+One Edeges = 7444
+
+^^^^ 52134482possible art len19663
+
+^^^^ 45417866possible art len19663
+
+^^^^ 13461341possible art len19663
+
+^^^^ 28934348possible art len19663
+
+^^^^ 39496354possible art len19663
+
+^^^^ 28082417possible art len19663
+
+^^^^ 4419023possible art len19663
+
+^^^^ 54966971possible art len19663
+
+^^^^ 31392113possible art len19663
+
+^^^^ 33474792possible art len19663
+
+^^^^ 43084449possible art len19663
+
+^^^^ 1208310possible art len19663
+
+^^^^ 1131727possible art len19663
+
+^^^^ 9827124possible art len19663
+
+^^^^ 27770575possible art len19663
+
+^^^^ 36208331possible art len19663
+
+^^^^ 56110224possible art len19663
+
+^^^^ 52659390possible art len19663
+
+^^^^ 555791possible art len19663
+
+^^^^ 56438918possible art len19663
+
+^^^^ 25139835possible art len19663
+
+^^^^ 58744601possible art len19663
+
+^^^^ 47493290possible art len19663
+
+^^^^ 53155602possible art len19663
+
+^^^^ 52811141possible art len19663
+
+#### For i=1175
+Array size: (490625, 3)
+Missing Art:3
+One Edeges = 7627
+
+^^^^ 25478556possible art len19663
+
+^^^^ 23152403possible art len19663
+
+^^^^ 66201011possible art len19663
+
+^^^^ 19059823possible art len19663
+
+^^^^ 56118837possible art len19663
+
+^^^^ 47217086possible art len19663
+
+^^^^ 29046446possible art len19663
+
+^^^^ 3939521possible art len19663
+
+^^^^ 1823707possible art len19663
+
+^^^^ 1472767possible art len19663
+
+^^^^ 52980891possible art len19663
+
+^^^^ 41588312possible art len19663
+
+^^^^ 4949196possible art len19663
+
+^^^^ 39081844possible art len19663
+
+^^^^ 27386122possible art len19663
+
+^^^^ 20675possible art len19663
+
+^^^^ 25585021possible art len19663
+
+^^^^ 18810725possible art len19663
+
+^^^^ 27414734possible art len19663
+
+^^^^ 60279614possible art len19663
+
+^^^^ 14182491possible art len19663
+
+^^^^ 37223878possible art len19663
+
+^^^^ 36989557possible art len19663
+
+#### For i=1198
+Array size: (451375, 3)
+Missing Art:3
+One Edeges = 7858
 

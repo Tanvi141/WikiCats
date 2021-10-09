@@ -254,6 +254,10 @@ class LabelMatcher():
                 S3 = self.identify_articles_in_subtree(p2)
                 possible_articles = possible_articles.union(set(list(S3.keys())))
 
+
+        with open(sys.argv[1].rsplit('/',1)[-1][:-13]+"_adjlog.txt","a+") as towr:
+            towr.write("^^^^ "+str(article) + "possible art len"+str(len(possible_articles))+"\n\n")
+
         for suggest_article in possible_articles:
 
             if suggest_article in self.articletree.id2name:
@@ -273,8 +277,12 @@ class LabelMatcher():
 
         lock.acquire()
         if len(article_edges) == 0:
+            if not isinstance(final_global_np, np.ndarray):
+                to_write_shape = "(None)"
+            else:
+                to_write_shape = str(final_global_np.shape)
             with open(sys.argv[1].rsplit('/',1)[-1][:-13]+"_adjlog.txt","a+") as towr:
-                towr.write("**** "+str(article)+"For i="+str(global_articles)+"\nArray size: "+str(final_global_np.shape)+"\nMissing Art:"+str(len(missing_articles))+"\nOne Edeges = "+str(one_edges)+"\n\n")
+                towr.write("**** "+str(article)+"For i="+str(global_articles)+"\nArray size: "+str(to_write_shape)+"\nMissing Art:"+str(len(missing_articles))+"\nOne Edeges = "+str(one_edges)+"\n\n")
             global_articles += 1
             lock.release()
             return
