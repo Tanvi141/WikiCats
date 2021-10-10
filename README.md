@@ -31,3 +31,42 @@
 | [`consolidated_subpages.txt`](./data/consolidated_subpages.txt)     |  Represents all the pages corresponding to each category. Each line represents a \<category_id\>:\<comma separated list of subpages that fall under this category\>. The script that can be used to generate this file is [`./src/data_collection/get_cat_tree.py`](./src/data_collection/get_cat_tree.py) |
 | [`id2article.json`](./data/id2article.json)     |  A mapping of each article ID to its corresponding article name |
 | [`missing_titles.txt`](./data/missing_titles.txt)     | A list of article IDs for which an error response was received while querying for the corresponding article name |
+
+### `scripts` Directory:
+
+| File | Description |
+|:----:|-----------|
+| [`adj.sh`](./scripts/adj.sh)    | Bash script to generate the **custom adjacency list via our pipeline** for a subset of articles |
+| [`run.sh`](./scripts/run.sh)    | Bash script |
+
+### `src/data_collection` Directory:
+
+| File | Description |
+|:----:|-----------|
+| [`get_articles.py`](./src/data_collection/get_articles.py)    | Script to get the XML content of all required articles |
+| [`get_cat_parent_ids.py`](./src/data_collection/get_cat_parent_ids.py)    | To collect the **IDs** of parent categories upto 3 levels up for all the categories in the Union Territory category tree.  |
+| [`get_cat_parent.py`](./src/data_collection/get_cat_parent.py)    | To collect the **names** of parent categories upto 3 levels up for all the categories in the Union Territory category tree.  |
+| [`get_cat_tree.py`](./src/data_collection/get_cat_tree.py)    | Constructs the wikipedia category tree **top-down** with the start node as the [Union Territories](https://en.wikipedia.org/wiki/Category:Union_territories_of_India) category. Generates the following files: <ul> <li>[`a file`](./Union_Territories/Union Territories of India_cat_keys.txt) that maps each category name to its corresponding category ID </li> <li>The subpages and subcats corresponding to each category. Files can be found [here](./Union_Territories/)</li> </ul> |
+| [`get_cat_wikidata_ids.py`](./src/data_collection/get_cat_wikidata_ids.py)    | To collect Wikidata knowledge graph IDs corresponding to each category ID  |
+| [`get_categories_for_articles.py`](./src/data_collection/get_categories_for_articles.py)    | Generates the list of categories corresponding to each article that is present under the Union Territories category (sub) tree. This is done since, the articles present in this tree need not necessarily have all their categories belonging to the UT tree itself. Hence this scripts helps get all the categories involved.  |
+| [`get_inlinks_tree.py`](./src/data_collection/get_inlinks_tree.py)    | Obtains the in-links between different articles of interest by parsing their XML content. Generates the corresponding adjacency list with articles as nodes for the same.  |
+| [`map_cat2emb_index.py`](./src/data_collection/map_cat2emb_index.py)    | Maps each category ID to its corresponding index in [`./data/cat_embeddings.npy`](./data/cat_embeddings.npy)  |
+| [`utils.py`](./src/data_collection/utils.py)    | A class with a few utility functions that can be used while querying the wikipedia API  |
+| [`xml_parser_withwrite.py`](./src/data_collection/xml_parser_withwrite.py)    | Parses multiple XML files as chunks of articles from the wikipedia data dump and then converts it to a custom XML file containing only those articles that are of interst. Rebuilds the XML element tree by selectively including articles that belong under the UT category tree.  |
+
+### `src/parse_tree` Directory:
+
+| File | Description |
+|:----:|-----------|
+| [`ArticleMap.py`](./src/parse_tree/ArticleMap.py)    | A class with functions to get a list of articles under a particular category, and get a list of categories for a particular article |
+| [`LabelMatcher.py`](./src/parse_tree/LabelMatcher.py)    | **Main Class** that performs the entire pipeline of carefully parsing the category tree and generating a corresponding list of similar articles -- using the tree, and knowledge graph informaiton. More information about the pipeline can be found [TODO: Link paper pdf]()|
+| [`cat_vec.py`](./src/parse_tree/cat_vec.py)    | Script to obtain the category embeddings from the WikiData knowledge graph. Uses embeddings from [PyTorch BigGraph](https://dl.fbaipublicfiles.com/torchbiggraph/wikidata_translation_v1.tsv.gz) |
+| [`Tree.py`](./src/parse_tree/Tree.py)    | A class with several functions to parse the category tree. Functions include: <ul><li>Get neighbours of a particular node -- parents or children upto K hops</li><li>Mapping of a category ID to its corresponding height in the tree from the root node</li></ul> |
+| [`WikiParser.py`](./src/parse_tree/WikiParser.py)    | [Deprecated] A class with functions to score articles and categories while parsing the cateogry tree for an input article. A diagramatic explanation of the same can be found [here](./documents/p1_n1_c1.drawio) |
+| [`adj_<TYPE>.sh`](./src/parse_tree/adj_<TYPE>.sh)    | Bash scripts to create the adjacency lists based on the pipeline. TYPE can be -- train, test, val |
+
+### `src/training` Directory:
+
+| File | Description |
+|:----:|-----------|
+| [`create_train_test.py`](./src/training/create_train_test.py)    | Script to shuffle and split all the articles under the union territory domain into train, test and validation sets of articles. These are then used to prepare the corresponding adjacency list files. |
