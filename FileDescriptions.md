@@ -54,6 +54,10 @@
 | [`WikiParser.py`](./src/parse_tree/WikiParser.py)    | [Deprecated] A class with functions to score articles and categories while parsing the cateogry tree for an input article. A diagramatic explanation of the same can be found [here](./documents/p1_n1_c1.drawio) |
 | [`adj_<TYPE>.sh`](./src/parse_tree/adj_<TYPE>.sh)    | Bash scripts to create the adjacency lists based on the pipeline. TYPE can be -- train, test, val |
 
+The prepared adjacency lists for the train, validation and test sets can be found in the respective files below:
+* [Train Subset](https://iiitaphyd-my.sharepoint.com/:f:/g/personal/mallika_subramanian_students_iiit_ac_in/EuVAfkO6B5VJphAezX3CULwBWJqpi1wOPh6nnWuqZGCckQ?e=VXCadc)
+* [Val Test Subset](https://iiitaphyd-my.sharepoint.com/:f:/g/personal/mallika_subramanian_students_iiit_ac_in/EnnX_PoxtbtBp9aDzek3qzcBfro74Psxb7NK_cxzlRVyTA?e=S7NuHS)
+
 ### `src/training` Directory:
 
 | File | Description |
