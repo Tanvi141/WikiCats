@@ -242,7 +242,14 @@ class LabelMatcher():
 
         #Now taking the S3 from the p2
         article_edges = set()
-            
+        
+        '''
+        POTENTIAL #TODO:
+        Explore different parameter for the parent height to 
+        prevent the entire category tree from being listed in 
+        S2. Vary hyperparams to see how the subsample list changes.
+        '''
+    
         possible_articles = set()
         p2_seen = set()
         for p1 in p2_set:
